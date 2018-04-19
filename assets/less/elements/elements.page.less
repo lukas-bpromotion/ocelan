@@ -1,0 +1,35 @@
+/*
+	Hlavni elementy HTML
+*/
+/* 
+    Created on : 15.5.2017, 13:57:33
+    Author     : Lukáš
+*/
+html,
+button,
+input,
+select,
+textarea {
+	font-family: @baseFont;
+}
+
+// Výchozí velikosti a barvy
+html {
+	height: 100%;
+	color: @colorFont;
+	font-size: @baseFontSize;
+	text-rendering: optimizeLegibility;
+	text-rendering: geometricPrecision;
+	font-smooth: always;
+	-webkit-font-smoothing: antialiased;
+	-moz-font-smoothing: antialiased;
+	font-smoothing: antialiased;
+}
+
+body {
+	height: 100%;	
+
+	&.modal {
+		overflow: hidden;
+	}
+}

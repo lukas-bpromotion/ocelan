@@ -1,0 +1,75 @@
+/*
+	Setting variables LESS for global
+*/
+/* 
+    Created on : 15.5.2017, 13:10:48
+    Author     : Lukáš
+*/
+// Velikos pisma
+@baseFontSize:  14px;
+
+// Základní font
+@baseFont:     ~'"Ubuntu", sans-serif';
+// Druhy font
+@secondFont:     ~'"Noto Serif", serif';
+// Treti font
+@thirdFont:     ~'"Ubuntu", sans-serif';
+
+// Cesta k souborům (relativně k css souboru)
+@srcFonts:  './fonts';  // cesta k fontům
+@srcImages: './images'; // cesta k obrázkům
+
+// Font weight
+@fwThin:            200; 
+@fwLight:           300;  
+@fwRegular:         normal;   
+@fwMedium:          500; 
+@fwBold:            bold;
+@fwBlack:           900;  
+
+// Border radius
+@brSmall:           3px;
+@brMedium:          5px;
+@brBig:             10px;
+
+// Box shadows
+@bsMediumBlack35O:      0 2px 4px 0 @colorBlack35O;
+@bsModerateBlack35O:    0 10px 20px 0 @colorBlack35O;
+@bsMediumBlack:         0 3px 4px 0 @colorBlack25O;
+@bsMediumBlackLeft:     -2px 0 4px 0 @colorBlack50;
+@bsMediumBlackRight:    0 -2px 4px 0 @colorBlack50;
+@bsModerateBlack:       0 4px 8px 0 @colorBlack50;
+@bsModerateBlackLeft:   -4px 0 4px 0 @colorBlack50;
+@bsModerateBlackRight:  4px 0 4px 0 @colorBlack50;
+@bsLargeBlack:          0 15px 30px 0 @colorBlack50;
+@bsBigBlack:            0 30px 40px 0 @colorBlack25O;
+@bsMediumBlueGray:      0 2px 4px 0 @colorBlueGray25;
+@bsModerateBlueGray:    0 4px 8px 0 @colorBlueGray25;
+@bsBigBlueGray:         0 20px 40px 0 @colorBlueGray25;
+@bsInsetBlack50:        inset 0 1px 3px 0 @colorBlack50;
+
+// Text shadows
+@tsMediumBlack:         0px 10px 20px @colorBlack35O;
+
+// Timing
+@timeShort:         0.127s;
+@timeMedium:        0.317s;
+@timeLong:          0.541s;
+
+// Easing
+@easingPrimary:     cubic-bezier(@easeInOutCubic);
+@easingSecondary:   ease;
+@easingTernary:     cubic-bezier(@easeInOutBackSuper);
+
+// Media queries
+@mediaMobileM:      ~'screen and (min-width: 30em)';  // >= 480px
+@mediaMobileL:      ~'screen and (min-width: 33.125em)';  // >= 530px
+@mediaMobileXL:     ~'screen and (min-width: 40em)';  // >= 640px
+@mediaTabletS:      ~'screen and (min-width: 48em)';    // >= 768px
+@mediaTabletM:      ~'screen and (min-width: 58em)';    // >= 928px
+@mediaTabletL:      ~'screen and (min-width: 64em)';    // >= 1024px
+@mediaTabletXl:     ~'screen and (min-width: 80em)';    // >= 1280px
+@mediaDesktopS:     ~'screen and (min-width: 85.375em)';    // >= 1366px
+@mediaDesktopM:     ~'screen and (min-width: 100em)';    // >= 1600px
+@mediaDesktopL:     ~'screen and (min-width: 120.0625em)';    // > 1920px
+@mediaRetina:       ~'(-webkit-min-device-pixel-ratio: 1.5), (-moz-min-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi)';

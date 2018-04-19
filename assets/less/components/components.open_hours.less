@@ -1,0 +1,183 @@
+/*
+Action bar component
+*/
+/* 
+    Created on : 27.3.2018, 11:44:43
+    Author     : Lukáš
+*/
+
+@c_open_hours: ~'c-open-hours';
+
+.@{c_open_hours} {  
+  padding: 80px 0 100px 0;
+
+  @media @mediaTabletXl {
+    padding: 150px 0 150px 0;
+  }		
+
+  &.info {
+    .@{c_open_hours} {
+
+      &__info-block {
+        color: @colorWhite;
+        background-color: @colorBlue;
+        .BoxShadow(@bsBigBlack);
+      }
+
+      &__time-item {
+        .BoxShadow(@bsMediumBlack);
+      }
+    }
+  }
+
+  &.warning {
+    .@{c_open_hours} {
+
+      &__info-block {
+        color: @colorWhite;
+        background-color: @colorRed;
+        .BoxShadow(@bsBigBlack);
+      }
+
+      &__time-item {
+        .BoxShadow(@bsMediumBlack);
+      }
+    }
+  }
+
+  &__content {
+    background-color: @colorGrayLighter;  
+    padding: 30px 30px 0px 30px;      
+
+    @media @mediaMobileXL {
+      padding: 30px 74px 0px 74px;  
+    }	
+  }
+
+  &__content-inner {
+
+  }
+
+  &__info-block {
+    position: relative;
+    font-family: @secondFont;
+    font-style: italic;
+    font-weight: @fwBold;
+    color: fade(@colorBlack, 25%);
+    text-align: center;
+    padding: 20px;
+    @fontSizeBase-px: 20;
+    @fontSizeActual-px: 20;
+    @lineheightBase-px: 27;		
+    .SetFont;	  
+  }
+
+  &__time-block {    
+    position: relative;
+    margin-top: -30px;    
+  }
+
+  &__time-block-inner {    
+    position: relative;
+    top: 50px;
+    .Flexbox;
+    .FlexDirection(column);
+    .FlexJustify(flex-start);
+    .AlignItems(center);
+
+    @media @mediaTabletXl {
+      .FlexDirection(row);
+      .FlexJustify(space-between);
+      .AlignItems(flex-start);
+    }		  
+  }
+
+  &__time-item {
+    width: 100%;
+    max-width: 260px;
+    min-height: 304px;
+    position: relative;
+    background-color: @colorWhite;
+    padding: 124px 36px 30px 36px;
+    box-sizing: border-box;
+    .BoxShadow(@bsBigBlack);
+
+    &:nth-child(2) {
+      margin-top: 30px;
+    }
+
+    @media @mediaMobileXL {
+      width: 436px;
+      max-width: none;
+      min-height: 73px;
+      padding: 30px 50px 30px 153px;
+
+      &:nth-child(2) {
+        margin-top: 40px;
+      }
+    }	
+
+    @media @mediaTabletXl {
+      width: calc(~'50% - 20px');
+
+      &:nth-child(2) {
+        margin-top: 0px;
+        margin-left: 40px;
+      }
+    }		   
+
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 30px;
+      left: 50%;
+      background-image: url("@{srcImages}/ico_clock.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+      .Size(73px, 73px);
+      .Translate(-50%, 0px);
+
+      @media @mediaMobileXL {
+        top: 50%;
+        left: 50px;
+        .Translate(0px, -50%);
+      }	
+    }
+
+    h3 {
+      font-family: @baseFont;
+      font-weight: @fwBold;
+      font-style: normal;
+      margin: 0 0 10px 0;
+      text-align: center;
+      color: @colorBlack;
+      @fontSizeBase-px: 24;
+      @fontSizeActual-px: 24;
+      @lineheightBase-px: 40;		
+      .SetFont;	  
+      
+      @media @mediaMobileXL {
+        text-align: left;
+      }	
+    }
+
+    div {
+
+      span {
+        display: inline-block;
+        color: @colorGray;
+        @fontSizeBase-px: 18;
+        @fontSizeActual-px: 18;
+        @lineheightBase-px: 30;		
+        .SetFont;	  
+
+        &:first-child {
+          width: 85px;
+        }
+      }
+    }
+  }
+
+}

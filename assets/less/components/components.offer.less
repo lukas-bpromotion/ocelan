@@ -1,0 +1,93 @@
+/*
+Offer component
+*/
+/* 
+    Created on : 13.11.2017, 9:36:18
+    Author     : Lukáš
+*/
+
+.c-offer {
+	padding: 80px 0 50px 0;
+	position: relative;
+
+	@media @mediaMobileL {			
+	}
+	
+	@media @mediaTabletS {	
+		padding: 177px 0;
+	}
+
+	&__image-box {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+
+		&:after {
+			content: ' ';
+			display: block;
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			background-color: @colorBlack30O;
+		}
+	}
+
+	&__text {
+		width: 100%;
+		max-width: 240px;
+		margin: 0 auto;
+		position: relative;	
+
+		@media @mediaTabletS {	
+			max-width: 620px;
+		}
+
+		&:before {
+			content: ' ';
+			display: block;
+			position: absolute;
+			top: -30px;
+			left: -10px;
+			.Size(98px, 80px);			
+			background-image: url("@{srcImages}/quote_left.svg");
+			background-repeat: no-repeat;
+			background-size: contain;
+			background-position: center;
+
+			@media @mediaTabletS {	
+				top: -35px;
+				left: -61px;
+				.Size(136px, 112px);			
+			}
+		}
+
+		&:after {
+			content: ' ';
+			display: block;
+			position: absolute;
+			bottom: 30px;
+			right: 0px;
+			.Size(98px, 80px);
+			background-image: url("@{srcImages}/quote_right.svg");
+			background-repeat: no-repeat;
+			background-size: contain;
+			background-position: center;
+
+			@media @mediaTabletS {	
+				bottom: auto;
+				top: -41px;
+				right: -41px;
+				.Size(136px, 112px);		
+			}
+		}
+
+		& > * {
+			position: relative;
+			z-index: 1;
+		}
+	}
+}

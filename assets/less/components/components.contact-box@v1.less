@@ -1,0 +1,133 @@
+/*
+Komponenta kontaktu version 1
+*/
+/* 
+    Created on : 6.6.2017, 16:49:12
+    Author     : Lukáš
+*/
+
+.c-contact-box-v1 {
+	display: inline-block;
+	text-align: left;
+	margin-top: 50px;
+	vertical-align: top;
+	.Size(250px, 355px);
+
+	@media @mediaMobileM {
+		.Size(180px, 285px);
+	}
+
+	@media @mediaMobileL {
+		.Size(200px, 305px);
+	}
+
+	@media @mediaMobileXL {
+		.Size(250px, 355px);
+	}
+
+	@media @mediaTabletS {
+		.Size(250px, 355px);
+	}
+
+	@media @mediaTabletM {
+		.Size(250px, 355px);
+	}
+
+	@media @mediaTabletL {
+		.Size(250px, 355px);
+	}
+
+	@media @mediaTabletXl {
+		.Size(250px, 355px);
+	}
+
+	&:not(:nth-child(2n+1)) {
+		@media @mediaMobileM {
+			margin-left: 30px;
+		}
+
+		@media @mediaMobileL {
+			margin-left: 50px;
+		}
+
+		@media @mediaMobileXL {
+			margin-left: 65px;
+		}
+
+		@media @mediaTabletS {
+			margin-left: 65px;
+		}
+
+		@media @mediaTabletM {
+			margin-left: 0px;
+		}
+	}
+
+	&:not(:nth-child(3n+1)) {
+		@media @mediaTabletM {
+			margin-left: 65px;
+		}
+
+		@media @mediaTabletL {
+			margin-left: 115px;
+		}
+
+		@media @mediaTabletXl {
+			margin-left: 0px;
+		}
+	}
+
+	&:not(:nth-child(4n+1)) {
+		@media @mediaTabletXl {
+			margin-left: 66px;
+		}
+	}
+
+	&__image-box {
+		position: relative;
+		overflow: hidden;
+		.Size(100%, 250px);
+		.BorderRadius(@brMedium);
+
+		@media @mediaMobileM {
+			.Size(100%, 180px);
+		}
+
+		@media @mediaMobileL {
+			.Size(100%, 200px);
+		}
+
+		@media @mediaMobileXL {
+			.Size(100%, 250px);
+		}
+	}
+
+	&__title {
+		font-size: 1rem;
+		line-height: 1.5625;
+		font-weight: @fwBold;
+		margin: 0;
+		padding: 20px 0 0 0;
+		.TruncateText;
+	}
+
+	&__subtitle {
+		font-size: 1rem;
+		line-height: 1.5625;
+		font-weight: @fwRegular;
+		margin: 0;
+		padding: 0;
+		.TruncateText;
+	}
+
+	&__link {
+		display: inline-block;
+		font-size: 1rem;
+		line-height: 1.5625;
+		font-weight: @fwRegular;
+		margin: 0;
+		padding: 10px 0 0 0;		
+		text-decoration: underline;
+		.TruncateText;
+	}
+}

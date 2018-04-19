@@ -1,0 +1,201 @@
+/*
+Work component
+*/
+/* 
+    Created on : 10.11.2017, 14:19:32
+    Author     : Lukáš
+*/
+
+.c-pride {
+	position: relative;
+	
+	&__big-text {
+		position: absolute;
+		z-index: -1;
+		padding: 0;
+		margin: 0;
+		top: -800px;
+		left: 0;
+		width: 100%;
+		display: none;
+		text-align: center;
+		font-weight: @fwBlack;
+		color: @colorGrayLight;
+		text-transform: uppercase;
+		@fontSizeBase-px: 300;
+		@fontSizeActual-px: 100;
+		@lineheightBase-px: 377;		
+		.SetFont;
+
+		@media @mediaMobileL {	
+			display: block;
+		}
+
+		@media @mediaTabletM {	
+			top: -500px;
+			@fontSizeActual-px: 180;
+			.SetFont;	
+		}
+
+		@media @mediaTabletXl {	
+			top: -550px;
+			@fontSizeBase-px: 300;
+			@fontSizeActual-px: 300;
+			@lineheightBase-px: 377;		
+			.SetFont;	
+		}
+	}	
+
+	&__content {
+		.ZeroFont;
+		padding: 30px 20px 0px 20px;		
+		width: 100%;
+		max-width: 754px;
+		margin: 0 auto;
+		box-sizing: border-box;
+		.Flexbox;
+		.FlexDirection(row);
+		.FlexJustify(center);
+		.AlignItems(flex-end);
+
+		@media @mediaMobileL {	
+			padding: 84px 20px 0 20px;
+		}		
+
+		@media @mediaTabletM {	
+			padding: 84px 0 0 0;	
+		}
+
+		@media @mediaTabletXl {	
+			padding: 150px 0 0 0;
+		}
+	}
+
+	&__carousel-box {
+		width: 100%;		
+		display: inline-block;
+		overflow: hidden;
+
+		@media @mediaMobileL {	
+			width: 600px;
+		}
+	}	
+
+	&__carousel-item {
+		display: inline-block;
+		.Size(100%, auto);
+	}
+
+	&__carousel-left-btn {
+		.Size(17px, 31px);
+		margin-right: 60px;
+		margin-bottom: 14px;
+		display: none;
+
+		@media @mediaMobileL {	
+			display: inline-block;
+		}
+
+		&--anim-circle {
+			position: relative;
+
+			&:before {
+				content: ' ';
+				position: absolute;
+				background-color: @colorBlack6O;
+				top: 50%;
+				left: 50%;
+				margin-left: -30px;
+				margin-top: -30px;
+				.BorderRadius(50%);
+				.Size(60px, 60px);
+				.Scale(0);
+				.Transition(~'transform @{timeMedium} @{easingTernary}');
+			}
+		}
+
+		&:hover {
+			&:before {
+				.Scale(1);
+			}
+		}
+	}
+
+	&__carousel-right-btn {
+		.Size(17px, 31px);
+		margin-left: 60px;
+		margin-bottom: 14px;
+		display: none;
+
+		@media @mediaMobileL {	
+			display: inline-block;
+		}
+
+		&--anim-circle {
+			position: relative;
+
+			&:before {
+				content: ' ';
+				position: absolute;
+				background-color: @colorBlack6O;
+				top: 50%;
+				left: 50%;
+				margin-left: -30px;
+				margin-top: -30px;
+				.BorderRadius(50%);
+				.Size(60px, 60px);
+				.Scale(0);
+				.Transition(~'transform @{timeMedium} @{easingTernary}');
+			}
+		}
+
+		&:hover {
+			&:before {
+				.Scale(1);
+			}
+		}
+	}
+
+	&__carousel-text {		
+		padding: 0;
+		margin: 0;	
+		font-weight: @fwRegular;
+		color: @colorBlack;
+		@fontSizeBase-px: 18;
+		@fontSizeActual-px: 18;
+		@lineheightBase-px: 30;			
+		.SetFont;	
+	}
+
+	&__carousel-name {		
+		padding: 30px 0 0 0;
+		margin: 0;	
+		font-weight: @fwBold;
+		color: @colorBlack;
+		font-family: @secondFont;
+		@fontSizeBase-px: 24;
+		@fontSizeActual-px: 24;
+		@lineheightBase-px: 33;			
+		.SetFont;	
+	}
+
+	&__carousel-position {		
+		padding: 3px 0 0 0;
+		margin: 0;	
+		font-weight: @fwRegular;
+		color: @colorBlack;
+		font-style: italic;
+		@fontSizeBase-px: 14;
+		@fontSizeActual-px: 14;
+		@lineheightBase-px: 24;			
+		.SetFont;	
+	}
+
+	.owl-dots {
+		display: block;
+
+		@media @mediaMobileL {	
+			display: none;
+		}
+	}
+}

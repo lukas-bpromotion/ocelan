@@ -1,0 +1,138 @@
+/*
+References banner component
+*/
+/* 
+    Created on : 15.11.2017, 12:24:16
+    Author     : Lukáš
+*/
+
+.c-references-banner {
+	padding: 75px 0;
+	position: relative;
+
+	@media @mediaTabletM {
+		padding: 100px 0;
+	}
+
+	&__image-box {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+
+		&:after {
+			content: ' ';
+			display: block;
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			background-color: @colorBlack30O;
+		}
+	}
+
+	&__text {
+		width: 100%;
+		max-width: 620px;
+		margin: 0 auto;
+		position: relative;
+		text-align: center;
+
+		&--alt {
+			h2 {
+				position: relative;
+				margin: 0;
+				padding: 0;
+				text-align: center;
+				font-weight: @fwRegular;
+				color: @colorGrayLight;
+				font-family: @secondFont;
+				@fontSizeBase-px: 24;
+				@fontSizeActual-px: 24;
+				@lineheightBase-px: 33;			
+				.SetFont;	
+			}
+
+			a.phone {
+				display: inline-block;
+				position: relative;
+				overflow: hidden;
+				margin: 0;
+				padding: 10px 0 0 0;
+				text-align: center;
+				font-weight: @fwBold;
+				color: @colorWhite;
+				font-family: @thirdFont;
+				@fontSizeBase-px: 30;
+				@fontSizeActual-px: 30;
+				@lineheightBase-px: 41;			
+				.SetFont;	
+
+				&:before {
+					content: ' ';
+					display: block;
+					position: absolute;
+					left: 0px;
+					bottom: 0px;
+					width: 100%;
+					height: 2px;
+					background-color: @colorWhite;
+					will-change: transform;
+					.Transition(~'transform @{timeMedium} @{easingPrimary}');
+					.Translate(-105%; 0px);
+				}
+
+				@media @mediaTabletM {
+					@fontSizeBase-px: 40;
+					@fontSizeActual-px: 40;
+					@lineheightBase-px: 55;			
+					.SetFont;	
+				}	
+
+				&:hover {
+					&:before {
+						.Translate(0px; 0px);
+					}
+				}
+			}
+
+			a.h3 {
+				position: relative;
+				display: inline-block;
+				overflow: hidden;
+				margin: 0;
+				padding: 10px 0 0 0;
+				text-align: center;
+				font-weight: @fwRegular;
+				color: @colorWhite;
+				font-family: @secondFont;
+				@fontSizeBase-px: 18;
+				@fontSizeActual-px: 18;
+				@lineheightBase-px: 24;			
+				.SetFont;	
+
+				&:before {
+					content: ' ';
+					display: block;
+					position: absolute;
+					left: 0px;
+					bottom: 0px;
+					width: 100%;
+					height: 1px;
+					background-color: @colorWhite;
+					will-change: transform;
+					.Transition(~'transform @{timeMedium} @{easingPrimary}');
+					.Translate(-105%; 0px);
+				}
+
+				&:hover {
+					&:before {
+						.Translate(0px; 0px);
+					}
+				}
+			}
+		}		
+	}
+}

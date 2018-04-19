@@ -1,0 +1,40 @@
+/*
+Objekt zahlavi version 2.
+*/
+/* 
+    Created on : 16.5.2017, 11:01:37
+    Author     : Lukáš
+*/
+
+.o-header-v1 {
+	position: fixed;
+	width: 100%;	
+	height: 80px;
+	padding: 0 20px;
+	margin: 0;
+	top: 0;
+	left: 0;
+	z-index: 99;
+	box-sizing: border-box;
+	display: block;
+	
+	@media @mediaTabletXl {
+		padding: 0;
+	}		
+
+	&__content {
+		position: relative;
+		width: 100%;	
+		height: 100%;
+		padding: 0;
+		margin: 0;
+		box-sizing: border-box;
+		display: block;
+		text-align: center;
+
+		@media @mediaTabletXl {
+			width: 75rem;
+			margin: 0 auto;
+		}		
+	}	
+}

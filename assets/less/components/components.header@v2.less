@@ -1,0 +1,27 @@
+/*
+Komponenta zahlavi version 2
+*/
+/* 
+    Created on : 15.5.2017, 15:56:39
+    Author     : Lukáš
+*/
+
+.c-header-v2 {
+	background-color: transparent;	
+	.BoxShadow(none);
+	.Transition(~'all @{timeMedium} @{easingPrimary}');
+	
+	&__content {
+	}		
+	
+	&.scrolled {
+		background-color: @colorWhite;	
+		.BoxShadow(none);
+		.Translate(0px, -100%);
+		
+		&.visible {
+			.Translate(0px, 0px);
+			.BoxShadow(@bsMediumBlack35O);
+		}
+	}	
+}

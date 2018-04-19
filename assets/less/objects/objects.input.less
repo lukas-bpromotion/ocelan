@@ -1,0 +1,28 @@
+/*
+Objekt inputu
+*/
+/* 
+    Created on : 6.6.2017, 11:38:53
+    Author     : Lukáš
+*/
+
+.o-input {
+	height: 50px;
+	box-sizing: border-box;
+	position: relative;
+	display: inline-block;	
+	padding: 0 1.25rem;
+	font-size: 1rem;
+	color: @colorBlack;
+	background: @colorWhite;
+	line-height: 1.5625;
+	outline: none;
+	border: 1px solid @colorGray;
+	.BorderRadius(@brMedium);
+	.BoxShadow(@bsInsetBlack50);
+	.Transition(~'background @{timeMedium} @{easingPrimary}, box-shadow @{timeMedium} @{easingPrimary}');
+	
+	&:focus {
+		
+	}
+}

@@ -1,0 +1,106 @@
+/*
+Komponenta znacek/log version 1
+*/
+/* 
+    Created on : 7.6.2017, 12:49:12
+    Author     : Lukáš
+*/
+
+.c-brand-v1 {
+	display: inline-block;
+	margin-top: 50px;
+	vertical-align: top;
+	padding: 0 20px;
+	.Size(200px, 195px);
+	
+	@media @mediaMobileM {
+		padding: 0;
+		.Size(180px, 195px);
+	}
+
+	@media @mediaMobileL {
+		.Size(200px, 195px);
+	}
+
+	@media @mediaMobileXL {
+		.Size(200px, 195px);
+	}
+
+	@media @mediaTabletS {
+		.Size(200px, 195px);
+	}
+
+	@media @mediaTabletM {
+		.Size(200px, 195px);
+	}
+
+	@media @mediaTabletL {
+		.Size(200px, 195px);
+	}
+
+	@media @mediaTabletXl {
+		.Size(200px, 195px);
+	}
+
+	&:not(:nth-child(2n+1)) {
+
+		@media @mediaMobileM {
+			margin-left: 60px;
+		}
+
+		@media @mediaMobileL {
+			margin-left: 60px;
+		}
+
+		@media @mediaMobileXL {
+			margin-left: 120px;
+		}
+		
+		@media @mediaTabletS {
+			margin-left: 0px;
+		}
+	}
+
+	&:not(:nth-child(3n+1)) {		
+
+		@media @mediaTabletS {
+			margin-left: 60px;
+		}
+
+		@media @mediaTabletM {
+			margin-left: 140px;
+		}
+
+		@media @mediaTabletL {
+			margin-left: 0px;
+		}
+	}
+
+	&:not(:nth-child(4n+1)) {		
+
+		@media @mediaTabletL {
+			margin-left: 60px;
+		}
+
+		@media @mediaTabletXl {
+			margin-left: 133px;
+		}
+	}
+
+	&__image-box {
+		position: relative;
+		overflow: hidden;
+		.Size(100%, 140px);
+	}
+
+	&__title {
+		font-size: 1.25rem;
+		line-height: 1.25;
+		font-weight: @fwRegular;
+		text-align: center;
+		margin: 0;
+		padding: 30px 0 0 0;
+		text-transform: uppercase;
+		.TruncateText;
+	}
+}

@@ -1,0 +1,186 @@
+/*
+Animation bar component
+*/
+/* 
+    Created on : 28.11.2017, 9:39:46
+    Author     : Lukáš
+*/
+
+.c-anim-bar {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: -1;	
+
+	& > span {
+		// Anim length 1.3s
+		position: absolute;
+		overflow: hidden;
+		//background-color: @colorRed80O;
+		//background: linear-gradient(142.7289deg, transparent 5%, @colorRed80O 0) top left;
+		height: 100%;
+		bottom: 0;
+		will-change: transform, opacity, height, width, left;
+		.Transition(~'transform @{timeMedium} @{easingPrimary}, height @{timeMedium} @{easingPrimary}, width @{timeMedium} @{easingPrimary}, left @{timeMedium} @{easingPrimary}');
+		.Translate(100vw; 0px);
+		//.AnimationName(bar_drive);
+		.AnimationDuration(0.3s);		
+		.AnimationFillMode(both);
+		.AnimationTimingFunction(~'@{easingPrimary}');
+
+		& > span {
+			display: block;
+			position: absolute;
+			top: 0;
+			right: 0;
+			background-color: @colorRed80O;
+			will-change: transform;
+			.Size(2000%, 200%);
+			.TransformOrigin(100% 0%);
+			.Rotate(-37.27109166deg);		
+			.Transition(~'transform @{timeMedium} @{easingPrimary}');
+		}
+
+		&:nth-child(1) {
+			width: percentage(0.841/18.828);
+			height: percentage(4.657/13.981);
+			left: 0;
+		}
+
+		&:nth-child(2) {
+			width: percentage(0.841/18.828);
+			height: percentage(5.893/13.981);
+			left: percentage(1.635/18.828);
+			.AnimationDelay(0.05s);
+		}
+
+		&:nth-child(3) {
+			width: percentage(0.841/18.828);
+			height: percentage(7.129/13.981);
+			left: percentage(3.27/18.828);
+			.AnimationDelay(0.1s);
+		}
+
+		&:nth-child(4) {
+			width: percentage(0.841/18.828);
+			height: percentage(10.908/13.981);
+			left: percentage(4.906/18.828);
+			.AnimationDelay(0.15s);
+		}
+
+		&:nth-child(5) {
+			width: percentage(0.841/18.828);
+			height: percentage(12.144/13.981);
+			left: percentage(6.541/18.828);
+			.AnimationDelay(0.2s);
+		}
+
+		&:nth-child(6) {
+			width: percentage(0.841/18.828);
+			height: percentage(13.38/13.981);
+			left: percentage(8.176/18.828);
+			.AnimationDelay(0.25s);
+		}
+
+		&:nth-child(7) {
+			width: percentage(4.111/18.828);
+			height: percentage(13.981/13.981);
+			left: percentage(9.812/18.828);
+			.AnimationDelay(0.3s);
+
+			& > span {
+				left: 0;				
+				.TransformOrigin(0% 0%);
+				.Rotate(37.27109166deg);
+			}
+		}
+
+		&:nth-child(8) {
+			width: percentage(4.111/18.828);
+			height: percentage(7.713/13.981);
+			left: percentage(14.717/18.828);
+			.AnimationDelay(0.35s);
+
+			& > span {
+				left: 0;				
+				.TransformOrigin(0% 0%);
+				.Rotate(37.27109166deg);
+			}
+		}		
+	}
+
+	&.anim-started {
+		& > span {
+			.AnimationName(bar_drive);
+		}
+	}
+
+	&.max-height {
+		& > span {
+			// Anim length 0.317s
+			.Translate(0px; 0px);
+			height: 100%;
+
+			& > span {
+				.Rotate(0);			
+			}
+		}
+	}
+
+	&.max-width {
+		& > span {	
+			// Anim length 0.317s
+			&:nth-child(1) {
+				width: percentage(1.238/18.828);
+				left: 0;
+			}
+
+			&:nth-child(2) {
+				width: percentage(1.635/18.828);
+				left: percentage(1.238/18.828);
+			}
+
+			&:nth-child(3) {
+				width: percentage(1.635/18.828);
+				left: percentage(2.873/18.828);
+			}
+
+			&:nth-child(4) {
+				width: percentage(1.635/18.828);
+				left: percentage(4.509/18.828);
+			}
+
+			&:nth-child(5) {
+				width: percentage(1.635/18.828);
+				left: percentage(6.144/18.828);
+			}
+
+			&:nth-child(6) {
+				width: percentage(1.635/18.828);
+				left: percentage(7.779/18.828);
+			}
+
+			&:nth-child(7) {
+				width: percentage(4.905/18.828);
+				left: percentage(9.415/18.828);
+			}
+
+			&:nth-child(8) {
+				width: percentage(4.508/18.828);
+				left: percentage(14.32/18.828);
+			}
+		}
+	}
+
+	&.anim-ended {
+		background-color: @colorRed80O;
+
+		& > span {			
+			display: none;
+		}
+	}
+}
+
+.TranslateToPositionOpacity(bar_drive, 100vw, 0, 0, 0, 0, 1);

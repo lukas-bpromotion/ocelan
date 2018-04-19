@@ -1,0 +1,71 @@
+/*
+Komponenta formulare version 1
+*/
+/* 
+    Created on : 6.6.2017, 14:06:15
+    Author     : Lukáš
+*/
+
+.c-form-v1 {
+	text-align: center;
+
+	&__input-block {
+		font-size: 0px;
+		line-height: 0;
+		margin: 0;
+		padding: 0;
+		.Flexbox;
+		.FlexDirection(column);
+		.FlexJustify(space-between);
+		.AlignItems(center);
+
+		& > * {
+			&:not(:first-child) {
+				margin-top: 25px;
+
+				@media @mediaTabletM {
+					margin-top: 0;
+				}
+			}
+		}
+
+		@media @mediaTabletM {
+			.FlexDirection(row);
+		}
+	}
+
+	input {
+		width: 100%;
+
+		@media @mediaTabletM {
+			max-width: 250px;
+		}
+
+		@media @mediaTabletL {
+			max-width: 290px;
+		}
+
+		@media @mediaTabletXl {
+			max-width: 340px;
+		}
+	}
+
+	&__textarea {
+		width: 100%;
+	}
+
+	&__submit {
+		width: 250px;
+		padding: 22px 1.25rem;
+	}
+
+	& > * {
+		&:not(:first-child) {
+			margin-top: 25px;
+
+			@media @mediaTabletM {
+				margin-top: 50px;
+			}
+		}
+	}
+}

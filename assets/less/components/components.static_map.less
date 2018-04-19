@@ -1,0 +1,103 @@
+/*
+Action bar component
+*/
+/* 
+    Created on : 27.3.2018, 11:44:43
+    Author     : Lukáš
+*/
+
+@c_static_map: ~'c-static-map';
+
+.@{c_static_map} {
+  position: relative;
+  padding: 80px 0 100px 0;
+  margin-top: 0px;
+  background-image: url("@{srcImages}/e_letter.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: left bottom;
+  z-index: 0;
+  overflow: hidden;
+
+  @media @mediaTabletS {
+    background-position: left top;
+  }		
+
+  @media @mediaTabletXl {
+    padding: 300px 0 180px 0;
+    margin-top: -50px;
+  }	
+
+
+  &__content {
+    .Flexbox;
+    .FlexDirection(column-reverse);
+    .FlexJustify(flex-start);
+    .AlignItems(flex-start);
+    
+    @media @mediaMobileM {
+      .FlexDirection(column-reverse);
+      .FlexJustify(flex-start);
+      .AlignItems(center);
+    }		
+
+    @media @mediaTabletS {
+      .FlexDirection(row);
+      .FlexJustify(space-around);
+      .AlignItems(center);
+    }		
+
+    @media @mediaTabletXl {
+      .FlexJustify(space-between);
+    }	
+  }
+
+  &__image-box {        
+    display: inline-block;
+    overflow: hidden; 
+
+    @media @mediaTabletXl {
+      margin-left: -32px;
+    }		
+
+    img {
+      .Size(452px, 330px);
+      @media @mediaTabletXl {
+        .Size(auto, auto);
+      }		
+    }
+  }
+
+  &__text-box {   
+    text-align: center;
+    padding-bottom: 40px;
+    width: 100%;
+
+    @media @mediaTabletS {
+      width: auto;
+      max-width: 180px;
+      padding-bottom: 0px;
+      text-align: left;
+    }		
+
+    h2 {
+      font-family: @secondFont;
+      font-weight: @fwBold;
+      margin: 0 0 20px 0;
+      padding: 0;
+      color: @colorGray;
+      @fontSizeBase-px: 30;
+      @fontSizeActual-px: 30;
+      @lineheightBase-px: 41;		
+      .SetFont;	
+
+      @media @mediaTabletS {
+        @fontSizeBase-px: 40;
+        @fontSizeActual-px: 40;
+        @lineheightBase-px: 55;		
+        .SetFont;	
+      }		
+    }
+  }
+
+}

@@ -1,0 +1,41 @@
+/*
+Progressive image loader
+*/
+/* 
+    Created on : 6.9.2017, 12:35:37
+    Author     : Lukáš
+*/
+
+.progressive {
+	position: relative;
+	display: block;
+	overflow: hidden;
+	outline: none;
+}
+
+.progressive:not(.replace) {
+	cursor: default;
+}
+
+.progressive img {
+	display: block;
+	width: 100%;
+	max-width: none;
+	height: auto;
+	border: 0 none;
+}
+
+.progressive img.preview {
+	.FilterBlur(11);
+	.Scale(1.05);
+}
+
+.progressive img.reveal {
+	position: absolute;
+	left: 0;
+	top: 0;
+	will-change: transform, opacity;
+	animation: reveal 0.499s ease-out;
+}
+
+.OpacityAnimation(reveal);

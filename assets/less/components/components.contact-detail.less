@@ -1,0 +1,175 @@
+/*
+Contact detail component
+*/
+/* 
+    Created on : 20.11.2017, 13:29:46
+    Author     : Lukáš
+*/
+
+.c-contact-detail {
+	position: relative;
+	padding: 0;
+	width: auto;
+	margin: 20px;
+	background-color: @colorBlack20O;
+	.BoxShadow(@bsMediumBlack35O);
+
+	@media @mediaMobileL {
+		max-width: 780px;
+		margin: 40px;
+	}	
+
+	@media @mediaTabletM {
+		margin: 80px auto;
+	}	
+
+	@media @mediaTabletXl {
+		max-width: 1120px;
+		margin: 180px auto;
+	}	
+
+	&__top-box {
+		position: relative;
+		.ZeroFont;	
+		.Size(100%, 150px); 
+
+		@media @mediaMobileL {
+			.Size(100%, 250px); 
+		}	
+
+		@media @mediaTabletM {
+			.Size(100%, 350px); 
+		}	
+
+		@media @mediaTabletXl {
+			.Size(100%, 543px); 
+		}	
+	}
+
+	&__image-box {
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		.Size(100%, 100%); 	
+
+		&:after {
+			content: ' ';
+			display: block;
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			background: -moz-linear-gradient(top, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0) 40%);
+			background: -webkit-linear-gradient(top, rgba(0,0,0,0.2) 0%,rgba(0,0,0,0) 40%);
+			background: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%,rgba(0,0,0,0) 40%);
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cc000000', endColorstr='#00000000',GradientType=0 );
+		}
+	}
+
+	&__bottom-box {
+		background-color: @colorWhite;
+		padding: 30px 30px 80px 30px;
+
+		@media @mediaMobileL {
+			padding: 50px 50px 144px 50px;
+		}	
+	}	
+
+	&__inner-box {
+		margin: 0 auto;
+		max-width: 700px;	
+
+		h2 {
+			text-align: center;
+		}
+
+		h3 {
+			text-align: center;
+			padding-top: 10px;
+		}
+
+		h4 {
+			text-align: left;
+		}
+
+		p {
+			font-family: @thirdFont;
+			padding: 20px 0 50px 0;
+			text-align: left;
+			font-weight: @fwRegular;
+			color: @colorBlack;
+			@fontSizeBase-px: 16;
+			@fontSizeActual-px: 16;
+			@lineheightBase-px: 26;		
+			.SetFont;	
+
+			@media @mediaTabletM {
+				padding: 30px 0 80px 0;
+			}	
+
+			&.small-bottom {
+				padding-bottom: 20px;
+
+				@media @mediaTabletM {
+					padding-bottom: 30px;
+				}	
+			}
+		}
+
+		ul {
+			margin: 0;
+			padding: 0;
+			list-style-type: none;
+
+			li {
+				margin: 0;
+				padding: 0 0 0 36px;
+				display: block;
+				text-align: left;
+				position: relative;
+				@fontSizeBase-px: 16;
+				@fontSizeActual-px: 16;
+				@lineheightBase-px: 26;		
+				.SetFont;	
+
+				&:before {
+					content: ' ';
+					display: block;
+					.Size(4px, 4px);
+					position: absolute;
+					top: 12px;
+					left: 12px;
+					background-color: @colorBlack;
+					.BorderRadius(50%);
+				}
+			}
+		}
+	}
+
+	&__close {
+		position: absolute;
+		top: 20px;
+		right: 20px;
+
+		@media @mediaTabletM {
+			top: 40px;
+			right: 40px;
+		}	
+	}
+
+	&__close-2 {
+		position: absolute;
+		bottom: 20px;
+		left: 20px;
+
+		@media @mediaTabletM {
+			bottom: 40px;
+			left: 40px;
+		}	
+	}
+
+	.mfp-close {
+		display: none;
+	}
+}

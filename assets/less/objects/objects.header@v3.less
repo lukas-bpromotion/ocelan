@@ -1,0 +1,47 @@
+/*
+Objekt zahlavi version 3
+*/
+/* 
+    Created on : 15.5.2017, 15:55:09
+    Author     : Lukáš
+*/
+
+.o-header-v3 {
+	position: fixed;
+	width: 100%;	
+	height: 80px;
+	padding: 0 20px;
+	margin: 0;
+	top: 0;
+	left: 0;
+	z-index: 99;
+	box-sizing: border-box;
+	display: block;
+
+	@media @mediaTabletXl {
+		padding: 0;
+	}		
+
+	&__content {
+		position: relative;
+		width: 100%;	
+		height: 100%;
+		padding: 0;
+		margin: 0;
+		box-sizing: border-box;
+		.Flexbox;
+		.Flexbox;
+		.FlexDirection(row);
+		.FlexJustify(space-between);
+		.AlignItems(center);
+
+		@media @mediaTabletXl {
+			width: 75rem;
+			margin: 0 auto;
+			.Flexbox;
+			.FlexDirection(row);
+			.FlexJustify(center);
+			.AlignItems(center);
+		}		
+	}	
+}

@@ -1,0 +1,283 @@
+/*
+Animation bar component
+*/
+/* 
+    Created on : 28.11.2017, 9:39:46
+    Author     : Lukáš
+*/
+
+.c-anim-bar {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: -1;	
+
+	& > span {
+		// Anim length 1.3s
+		position: absolute;
+		//overflow: hidden;
+		background-color: @colorRed80O;
+		//background: linear-gradient(142.7289deg, transparent 5%, @colorRed80O 0) top left;
+		//height: 200%;
+		//top: 0;
+		will-change: transform, opacity, width, height, bottom, left;
+		.TransformOrigin(100% 100%);
+		.Transition(~'transform @{timeMedium} @{easingPrimary}, opacity @{timeMedium} @{easingPrimary}, width @{timeMedium} @{easingPrimary}, height @{timeMedium} @{easingPrimary}, bottom @{timeMedium} @{easingPrimary}, left @{timeMedium} @{easingPrimary}');
+		//.Translate(-100vw; 0px);
+		.TransformBase(~'translate(-100vw, 0%) rotate(15deg)');
+		.Opacity(0);
+		//.AnimationName(bar_drive);
+		.AnimationDuration(0.3s);		
+		.AnimationFillMode(both);
+		.AnimationTimingFunction(~'@{easingPrimary}');
+
+		& > span {
+			display: none;
+			position: absolute;			
+			will-change: transform, height, width;			
+			.Rotate(-15deg);		
+			.Transition(~'transform @{timeMedium} @{easingPrimary}, width @{timeMedium} @{easingPrimary}, height @{timeMedium} @{easingPrimary}');			
+		}
+
+		&:nth-child(1) {
+			background-color: transparent;
+			overflow: hidden;
+			.AnimationDelay(0.4s);
+			.TransitionDelay(0.4s);
+
+			& > span {
+				display: block;
+				position: absolute;
+				top: 0;
+				right: 0;
+				background-color: @colorRed80O;
+				will-change: transform, width, height;		
+				.TransformOrigin(100% 0%);
+				.Rotate(-15deg);		
+				.Transition(~'transform @{timeMedium} @{easingPrimary}, width @{timeMedium} @{easingPrimary}, height @{timeMedium} @{easingPrimary}');			
+			}
+		}
+
+		&:nth-child(2) {
+			.AnimationDelay(0.35s);
+			.TransitionDelay(0.35s);
+		}
+
+		&:nth-child(3) {
+			.AnimationDelay(0.3s);
+			.TransitionDelay(0.3s);
+		}
+
+		&:nth-child(4) {
+			.AnimationDelay(0.25s);
+			.TransitionDelay(0.25s);
+		}
+
+		&:nth-child(5) {
+			.AnimationDelay(0.2s);
+			.TransitionDelay(0.2s);
+		}
+
+		&:nth-child(6) {
+			.AnimationDelay(0.15s);
+			.TransitionDelay(0.15s);
+		}
+
+		&:nth-child(7) {
+			.AnimationDelay(0.1s);
+			.TransitionDelay(0.1s);
+		}
+
+		&:nth-child(8) {		
+			.AnimationDelay(0.05s);
+			.TransitionDelay(0.05s);
+		}		
+
+		&:nth-child(9) {		
+			background-color: transparent;
+			overflow: hidden;
+			.AnimationDelay(0.0s);
+			.TransitionDelay(0.0s);
+			
+			& > span {
+				display: block;
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				background-color: @colorRed80O;
+				will-change: transform, width, height;		
+				.TransformOrigin(0% 100%);
+				.Rotate(-15deg);		
+				.Transition(~'transform @{timeMedium} @{easingPrimary}, width @{timeMedium} @{easingPrimary}, height @{timeMedium} @{easingPrimary}');			
+			}
+		}		
+
+		/*&:nth-child(1) {
+			width: percentage(8.5625/100);
+			left: percentage(0*(13.0625/100));
+			.AnimationDelay(0.4s);
+			.TransitionDelay(0.4s);
+		}
+
+		&:nth-child(2) {
+			width: percentage(8.5625/100);
+			left: percentage(1*(13.0625/100));
+			.AnimationDelay(0.35s);
+			.TransitionDelay(0.35s);
+		}
+
+		&:nth-child(3) {
+			width: percentage(8.5625/100);
+			left: percentage(2*(13.0625/100));
+			.AnimationDelay(0.3s);
+			.TransitionDelay(0.3s);
+		}
+
+		&:nth-child(4) {
+			width: percentage(8.5625/100);
+			left: percentage(3*(13.0625/100));
+			.AnimationDelay(0.25s);
+			.TransitionDelay(0.25s);
+		}
+
+		&:nth-child(5) {
+			width: percentage(8.5625/100);
+			left: percentage(4*(13.0625/100));
+			.AnimationDelay(0.2s);
+			.TransitionDelay(0.2s);
+		}
+
+		&:nth-child(6) {
+			width: percentage(8.5625/100);
+			left: percentage(5*(13.0625/100));
+			.AnimationDelay(0.15s);
+			.TransitionDelay(0.15s);
+		}
+
+		&:nth-child(7) {
+			width: percentage(8.5625/100);
+			left: percentage(6*(13.0625/100));
+			.AnimationDelay(0.1s);
+			.TransitionDelay(0.1s);
+		}
+
+		&:nth-child(8) {
+			//width: percentage(8.5625/100);
+			width: 25%;
+			background-color: transparent;
+			left: percentage(7*(13.0625/100));
+			.AnimationDelay(0.05s);
+			.TransitionDelay(0.05s);
+
+			& > span {
+				display: none;
+				position: absolute;
+				top: 0;
+				right: 0;
+				background-color: @colorRed80O;
+				will-change: transform, height, width;
+				.Size(100%, 100%);
+				.TransformOrigin(100% 0%);
+				.Rotate(-27.75deg);		
+				.Transition(~'transform @{timeMedium} @{easingPrimary}, width @{timeMedium} @{easingPrimary}, height @{timeMedium} @{easingPrimary}');			
+			}
+		}		
+		
+		&:nth-child(9) {
+			//width: percentage(8.5625/100);
+			width: 25%;
+			background-color: transparent;
+			left: percentage(7*(13.0625/100));
+			.AnimationDelay(0.0s);
+			.TransitionDelay(0.0s);
+
+			& > span {
+				display: none;
+				position: absolute;
+				top: 0;
+				right: 0;
+				background-color: @colorRed80O;
+				will-change: transform, height, width;
+				.Size(100%, 100%);
+				.TransformOrigin(100% 0%);
+				.Rotate(-27.75deg);		
+				.Transition(~'transform @{timeMedium} @{easingPrimary}, width @{timeMedium} @{easingPrimary}, height @{timeMedium} @{easingPrimary}');			
+			}
+		}		*/
+	}
+
+	&.anim-started {
+		& > span {
+			//.AnimationName(bar_drive_v2);
+			.TransformBase(~'translate(0%, 0%) rotate(15deg)');
+			.Opacity(1);
+		}
+	}
+
+	&.max-width {
+		& > span {		
+			//.AnimationName(__none__);
+			.TransitionDelay(0.0s);
+			.TransformBase(~'translate(0px, 0px) rotate(15deg)');
+			.Opacity(1);
+			// Anim length 0.317s
+			/*&:nth-child(1) {
+				width: 12.5%;
+				left: percentage(0 * 0.125);
+			}
+
+			&:nth-child(2) {
+				width: 12.5%;
+				left: percentage(1 * 0.125);
+			}
+
+			&:nth-child(3) {
+				width: 12.5%;
+				left: percentage(2 * 0.125);
+			}
+
+			&:nth-child(4) {
+				width: 12.5%;
+				left: percentage(3 * 0.125);
+			}
+
+			&:nth-child(5) {
+				width: 12.5%;
+				left: percentage(4 * 0.125);
+			}
+
+			&:nth-child(6) {
+				width: 12.5%;
+				left: percentage(5 * 0.125);
+			}
+
+			&:nth-child(7) {
+				width: 12.5%;
+				left: percentage(6 * 0.125);
+			}
+
+			&:nth-child(8) {
+				width: 12.5%;
+				left: percentage(7 * 0.125);
+			}
+
+			& > span {
+				.Rotate(0deg);			
+				.Size(100%, 100%);
+			}*/
+		}
+	}
+
+	&.anim-ended {
+		background-color: @colorRed80O;
+
+		& > span {			
+			display: none;
+		}
+	}
+}
+
+.TranslateToPositionOpacity(bar_drive, -100vw, 0, 0, 0, 0, 1);
+.AnimateHeroBar(bar_drive_v2);

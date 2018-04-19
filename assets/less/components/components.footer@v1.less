@@ -1,0 +1,219 @@
+/*
+Komponenta zapati version 1
+*/
+/* 
+    Created on : 6.6.2017, 11:36:33
+    Author     : Lukáš
+*/
+
+.c-footer-v1 {
+  position: relative;
+  overflow: hidden;
+  padding-top: 50px;
+
+  &__content {
+    position: relative;    
+    background-color: @colorGrayLighter;   
+    padding: 0 30px;
+
+    @media @mediaMobileL {
+      padding: 0 50px;
+    }
+
+    @media @mediaTabletM {
+      height: 644px;
+      padding: 0px;
+    }	
+  }
+
+  &__map {
+    position: relative;
+    width: 100%;
+    height: 260px;    
+    top: -50px;
+    .BoxShadow(@bsBigBlack);
+
+    @media @mediaMobileL {
+      height: 360px;    
+    }
+
+    @media @mediaTabletM {
+      position: absolute;
+      width: 1154px;
+      height: 579px;
+      top: -50px;
+      left: 50%;
+      margin-left: -1050px;
+    }
+
+    @media @mediaTabletXl {
+      margin-left: -954px;
+    }	
+  }
+
+  &__text {
+    position: relative;
+    padding: 30px 0px 175px 0px;    
+
+    @media @mediaMobileL {
+      padding: 30px 50px 175px 50px;    
+    }
+
+    @media @mediaTabletS {
+      padding: 30px 50px 115px 50px;    
+      .Flexbox;
+      .FlexDirection(row);
+      .FlexJustify(space-between);
+      .AlignItems(flex-start);    
+    }	
+
+    @media @mediaTabletM {
+      padding: 0px;
+      display: block;
+      position: absolute;
+      max-width: 220px;
+      min-width: 220px;
+      top: 100px;
+      right: 50px;
+    }
+
+    @media @mediaTabletXl {
+      right: auto;
+      left: 50%;
+      margin-left: 350px;
+    }	
+  }
+
+  &__address { 
+    text-align: center;
+
+    @media @mediaTabletS {
+      text-align: left;
+    }	
+
+    h2 {
+      margin: 0px;
+    }
+
+    p {
+      font-weight: @fwLight;
+      margin: 0;
+      padding: 10px 0 0 0;
+      color: @colorGray;
+      @fontSizeBase-px: 18;
+      @fontSizeActual-px: 18;
+      @lineheightBase-px: 30;		
+      .SetFont;	
+    }
+
+    a {
+      margin-top: 30px;      
+    } 
+  }
+
+  &__socials {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;    
+    max-width: 200px;
+
+    @media @mediaTabletS {
+      margin-left: 0;
+      margin-right: 0;
+      margin-top: 55px;
+    }
+
+    @media @mediaTabletM {
+      margin-top: 20px;
+    }
+
+    a {   
+      margin-top: 10px;
+      .FlexboxInline;
+      .FlexDirection(row);
+      .FlexJustify(flex-start);
+      .AlignItems(center);
+      .ZeroFont;
+
+      span {
+        display: inline-block;
+
+        &:first-child {
+          &.colorable, .colorable {
+            fill: @colorRed;
+            .Transition(~'fill @{timeMedium} @{easingSecondary}');
+          }
+        }
+
+        &:nth-child(2) {
+          padding-left: 10px;
+          color: @colorBlack;
+          font-weight: @fwBold;
+          @fontSizeBase-px: 18;
+          @fontSizeActual-px: 18;
+          @lineheightBase-px: 30;		
+          .SetFont;	
+        }
+      }
+
+      &:hover {
+        span {         
+
+          &:first-child {
+            &.colorable, .colorable {
+              fill: shade(@colorRed, 20%);
+            }
+          }          
+        }
+      }
+    }
+  }
+
+  &__bpromo {
+    position: absolute;
+    bottom: 80px;
+    left: 50%;
+    .Translate(-50%, 0px);
+
+    @media @mediaTabletS {
+      bottom: 50px;
+    }
+  }
+
+  &__bpromo-content {
+    text-align: center;
+
+    @media @mediaTabletS {
+      text-align: right;
+    }
+
+    a {
+      display: inline-block;
+      .Opacity(0.35);
+      .Transition(~'opacity @{timeMedium} @{easingSecondary}');
+      span {
+        vertical-align: middle;
+        display: inline-block;
+        .ZeroFont;
+
+        &:first-child { 
+          color: @colorBlack;
+          @fontSizeBase-px: 12;
+          @fontSizeActual-px: 12;
+          @lineheightBase-px: 13;		
+          .SetFont;	
+        }
+
+        &:nth-child(2) {
+          position: relative;
+          margin-top: -1px;
+          padding-left: 6px;
+        }
+      }
+
+      &:hover {
+        .Opacity(1);
+      }
+    }
+  }
+}

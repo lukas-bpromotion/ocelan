@@ -1,0 +1,113 @@
+/*
+Komponanta karty version 1
+*/
+/* 
+    Created on : 7.6.2017, 10:26:55
+    Author     : Lukáš
+*/
+
+.c-card-v1 {
+	display: inline-block;
+	margin-top: 50px;
+	vertical-align: top;
+	z-index: 0;
+	.Size(280px, 337px);
+	.BorderRadius(@brMedium);
+	.BoxShadow(@bsMediumBlack);
+	.Transition(~'box-shadow @{timeMedium} @{easingPrimary}, z-index @{timeMedium} @{easingPrimary}');
+	
+	@media @mediaMobileM {
+		.Size(340px, 337px);
+	}
+
+	@media @mediaMobileL {
+		.Size(340px, 337px);
+	}
+
+	@media @mediaMobileXL {
+		.Size(270px, 337px);
+	}
+
+	@media @mediaTabletS {
+		.Size(340px, 337px);
+	}
+
+	@media @mediaTabletM {
+		.Size(260px, 337px);
+	}
+
+	@media @mediaTabletL {
+		.Size(293px, 337px);
+	}
+
+	@media @mediaTabletXl {
+		.Size(340px, 337px);
+	}
+
+	&:not(:nth-child(2n+1)) {
+
+		@media @mediaMobileXL {
+			margin-left: 40px;
+		}
+
+		@media @mediaTabletS {
+			margin-left: 40px;
+		}
+
+		@media @mediaTabletM {
+			margin-left: 0px;
+		}
+	}
+
+	&:not(:nth-child(3n+1)) {		
+
+		@media @mediaTabletM {
+			margin-left: 50px;
+		}
+
+		@media @mediaTabletL {
+			margin-left: 50px;
+		}
+
+		@media @mediaTabletXl {
+			margin-left: 90px;
+		}
+	}
+	
+	&:hover {		
+		z-index: 10;
+		.BoxShadow(@bsBigBlack);
+	}
+
+	&__image-box {
+		position: relative;
+		overflow: hidden;
+		.Size(100%, 227px);
+		.BorderRadiusTopLeft(@brMedium);
+		.BorderRadiusTopRight(@brMedium);
+	}
+	
+	&__text-box {
+		margin: 0;
+		padding: 0 30px;	
+		.QuirkSize;
+		.Flexbox;
+		.FlexDirection(row);
+		.FlexJustify(center);
+		.AlignItems(center);
+		.Size(100%, 110px);
+		.BorderRadiusBottomLeft(@brMedium);
+		.BorderRadiusBottomRight(@brMedium);
+	}
+
+	&__title {
+		font-size: 1rem;
+		line-height: 1.5625;
+		font-weight: @fwBold;
+		color: @colorBlack;
+		text-align: center;
+		margin: 0;
+		padding: 0;
+		text-transform: uppercase;
+	}
+}

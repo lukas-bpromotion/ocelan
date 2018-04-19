@@ -1,0 +1,362 @@
+/*
+Strength component
+*/
+/* 
+    Created on : 10.11.2017, 14:19:32
+    Author     : Lukáš
+*/
+
+.c-download {
+	position: relative;
+	background-color: @colorBlack;
+	oveflow: hidden;
+
+	&__block {
+		display: block;
+		.FlexDirection(column);
+		.FlexJustify(center);
+		.AlignItems(center);
+
+		@media @mediaTabletXl {
+			.Flexbox;
+			.FlexDirection(row);
+			.FlexJustify(space-between);
+			.AlignItems(center);
+		}
+	}
+
+	&__title-box {
+		text-align: center;
+		padding-bottom: 20px;
+
+		@media @mediaTabletXl {
+			text-align: left;	
+			padding-bottom: 0px;
+		}
+
+		h2 {
+			color: @colorWhite;
+			text-transform: uppercase;
+			font-weight: @fwRegular;
+			margin: 0;
+			@fontSizeBase-px: 24;
+			@fontSizeActual-px: 20;
+			@lineheightBase-px: 29;		
+			.SetFont;	
+
+			@media @mediaMobileXL {
+				@fontSizeActual-px: 24;
+				.SetFont;	
+			}
+		}
+
+		h3 {
+			color: @colorYellow;
+			text-transform: uppercase;
+			font-weight: @fwBlack;
+			margin: 0;
+			@fontSizeBase-px: 80;
+			@fontSizeActual-px: 40;
+			@lineheightBase-px: 94;		
+			.SetFont;	
+			
+			@media @mediaMobileXL {
+				@fontSizeActual-px: 80;
+				.SetFont;	
+			}
+		}
+	}
+
+	&__button-box {
+		text-align: center;	
+		margin-top: 50px;
+		margin-bottom: 20px;
+
+		@media @mediaTabletXl {
+			margin-top: 0px;
+			margin-bottom: 0px;
+		}
+
+		h2 {
+			color: @colorWhite;
+			font-style: italic;
+			text-transform: uppercase;
+			font-weight: @fwMedium;
+			margin: 0 auto;
+			@fontSizeBase-px: 14;
+			@fontSizeActual-px: 14;
+			@lineheightBase-px: 24;		
+			.SetFont;	
+			max-width: 200px;
+		}		
+	}
+
+	&__download-btn {
+		.Size(219px, 60px);
+		position: relative;				
+		text-transform: uppercase;
+		.FlexboxInline;
+		.FlexDirection(row);
+		.FlexJustify(center);
+		.AlignItems(center);
+		box-sizing: border-box;
+		font-weight: @fwBold;
+		color: @colorBlack;
+		@fontSizeBase-px: 16;
+		@fontSizeActual-px: 16;
+		@lineheightBase-px: 19;		
+		.SetFont;	
+		margin-top: 20px;
+		background-color: transparent;
+		z-index: 0;
+		will-change: transform;
+		.Transition(~'transform @{timeMedium} @{easingPrimary}');
+		.TransformBase(~'scale(1, 1)');		
+
+		&:hover {
+			color: @colorBlack;
+			.TransformBase(~'scale(1.1, 1.1)');
+
+			&:before {
+				.TransformBase(~'translate(-9px, -19px)');		
+			}
+		}
+
+		span {
+			vertical-align: middle;
+		}
+
+		svg {
+			vertical-align: middle;
+			padding-right: 12px;
+		}
+
+		&:before {
+			content: ' ';
+			display: block;
+			position: absolute;
+			.Size(219px, 60px);
+			top: 13px;
+			left: 19px;
+			background-color: transparent;
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-image: url("@{srcImages}/download_linka.svg");
+			z-index: -1;
+			will-change: transform;
+			.Transition(~'transform @{timeMedium} @{easingPrimary}');
+		}
+
+		&:after {
+			content: ' ';
+			display: block;
+			position: absolute;
+			.Size(275px, 118px);
+			top: -14px;
+			left: -28px;
+			background-color: transparent;
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-image: url("@{srcImages}/download_plny.svg");
+			z-index: -1;
+		}
+	}
+
+	&__big-text {
+		position: absolute;
+		z-index: -1;
+		padding: 0;
+		margin: 0;
+		top: 150px;
+		left: 0px;
+		width: 100%;
+		display: none;
+		text-align: center;
+		font-weight: @fwBlack;
+		color: @colorGrayLight;
+		text-transform: uppercase;
+		@fontSizeBase-px: 300;
+		@fontSizeActual-px: 100;
+		@lineheightBase-px: 377;		
+		.SetFont;	
+
+		@media @mediaMobileL {	
+			display: block;
+			top: 180px;
+		}
+
+		@media @mediaTabletM {	
+			top: 130px;
+			@fontSizeActual-px: 180;
+			.SetFont;	
+		}
+
+		@media @mediaTabletXl {	
+			top: 170px;
+			@fontSizeActual-px: 250;	
+			.SetFont;	
+		}
+
+		@media @mediaDesktopM {	
+			top: 150px;
+			@fontSizeBase-px: 300;
+			@fontSizeActual-px: 300;
+			@lineheightBase-px: 377;		
+			.SetFont;	
+		}
+	}	
+
+	&__subtitle {
+		margin-top: 10px !important;
+	}
+
+	&__content {
+		.ZeroFont;
+
+		@media @mediaTabletM {	
+			padding-top: 20px;
+		}
+	}
+
+	&__item {
+		padding-top: 50px;
+		display: inline-block;
+		box-sizing: border-box;
+		width: 100%;	
+		text-align: center;
+
+		@media @mediaMobileL {	
+			padding-top: 80px;
+			width: calc(~'100%/2');
+
+			&:nth-of-type(2n+1) {
+				text-align: left;
+			}
+
+			&:nth-of-type(2n+2) {
+				text-align: right;
+			}			
+		}
+
+		@media @mediaTabletM {	
+			padding-top: 60px;
+			width: calc(~'100%/3');
+
+			&:nth-of-type(2n+1) {
+				text-align: left;
+			}
+
+			&:nth-of-type(2n+2) {
+				text-align: left;
+			}		
+
+			&:nth-of-type(3n+1) {
+				text-align: left;
+			}
+
+			&:nth-of-type(3n+2) {
+				text-align: center;
+			}
+
+			&:nth-of-type(3n+3) {
+				text-align: right;
+			}	
+		}
+
+		@media @mediaTabletXl {	
+			padding-top: 80px;	
+		}
+	}
+
+	&__item-content {
+		display: inline-block;
+		box-sizing: border-box;
+	}
+
+	&__number-box {
+		.Flexbox;
+		.FlexDirection(row);
+		.FlexJustify(center);
+		.AlignItems(center);
+	}
+
+	&__number {		
+		display: inline-block;
+		padding: 0;
+		margin: 0;	
+		text-align: center;
+		font-weight: @fwBold;
+		color: @colorRed;
+		font-family: @secondFont;
+		.TextShadow(@tsMediumBlack);
+		@fontSizeBase-px: 80;
+		@fontSizeActual-px: 80;
+		@lineheightBase-px: 109;			
+		.SetFont;		
+
+		@media @mediaTabletM {	
+			@fontSizeBase-px: 100;
+			@fontSizeActual-px: 100;	
+			@lineheightBase-px: 136;	
+			.SetFont;	
+		}
+
+		@media @mediaTabletXl {	
+			@fontSizeBase-px: 120;
+			@fontSizeActual-px: 120;	
+			@lineheightBase-px: 163;	
+			.SetFont;	
+		}
+	}
+
+	&__number-description {
+		display: inline-block;		
+		padding: 0 0 0 20px;
+		margin: 0;	
+		text-align: left;
+		font-weight: @fwBold;
+		color: @colorBlack;
+		font-family: @secondFont;
+		@fontSizeBase-px: 20;
+		@fontSizeActual-px: 20;
+		@lineheightBase-px: 27;			
+		.SetFont;	
+
+		@media @mediaTabletM {	
+
+		}
+
+		@media @mediaTabletXl {	
+			@fontSizeBase-px: 24;
+			@fontSizeActual-px: 24;
+			@lineheightBase-px: 33;			
+			.SetFont;	
+		}
+	}
+
+	&__name {
+		padding: 0;
+		margin: 0;	
+		text-align: center;
+		font-weight: @fwLight;
+		color: @colorBlack;
+		@fontSizeBase-px: 30;
+		@fontSizeActual-px: 30;
+		@lineheightBase-px: 38;			
+		.SetFont;	
+
+		@media @mediaMobileL {	
+
+		}	
+
+		@media @mediaTabletM {	
+
+		}
+
+		@media @mediaTabletXl {	
+
+		}
+	}
+}

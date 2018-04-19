@@ -1,0 +1,150 @@
+/*
+Strength component
+*/
+/* 
+    Created on : 10.11.2017, 14:19:32
+    Author     : Lukáš
+*/
+
+.c-highlights {
+	position: relative;
+	overflow: hidden;
+	background-color: @colorBlack;
+
+	&__block {
+		.Flexbox;
+		.FlexDirection(column-reverse);
+		.FlexJustify(space-between);
+		.AlignItems(center);
+
+		@media @mediaTabletXl {
+			.FlexDirection(row);
+		}			
+	}
+
+	&__text-box {
+		max-width: 600px;
+		margin: 0 auto;		
+
+		@media @mediaTabletXl {
+			margin: 0;
+		}	
+
+		h2 {
+			color: @colorYellow;
+			text-transform: uppercase;
+			font-weight: @fwRegular;
+			margin: 0 0 30px 0;
+			@fontSizeBase-px: 30;
+			@fontSizeActual-px: 30;
+			@lineheightBase-px: 35;		
+			.SetFont;	
+		}
+
+		p {
+			color: @colorWhite;
+			font-weight: @fwBold;
+			margin: 0;
+			padding: 0;
+			@fontSizeBase-px: 14;
+			@fontSizeActual-px: 14;
+			@lineheightBase-px: 24;		
+			.SetFont;	
+
+			@media @mediaMobileXL {
+				padding: 0 0 35px 0;
+			}	
+		}
+
+		ul {
+			margin: 0;
+			padding: 0;
+			list-style-type: none;
+			text-align: left;
+
+			li {
+				color: @colorWhite;
+				font-weight: @fwRegular;
+				position: relative;
+				overflow: hidden;
+				padding: 0 0 0 22px;
+				margin: 36px 0 0 0;
+				vertical-align: top;
+				width: auto;
+				.Flexbox;
+				.FlexDirection(row);
+				.FlexJustify(flex-start);
+				.AlignItems(center);	
+				@fontSizeBase-px: 14;
+				@fontSizeActual-px: 14;
+				@lineheightBase-px: 24;		
+				.SetFont;	
+
+				@media @mediaMobileXL {
+					margin: 46px 0 0 0;
+				}	
+
+				@media @mediaTabletM {
+					width: 240px;
+					.FlexboxInline;
+
+					&:nth-of-type(2n) {
+						margin-left: 70px;
+					}
+				}
+
+				&:before {
+					content: ' ';
+					display: block;
+					position: absolute;
+					.Size(4px, calc(~'100% - 10px'));			
+					background-color: @colorYellow;
+					top: 5px;
+					left: 0px;
+				}					
+
+				b {
+					font-weight: @fwBold;
+				}
+			}
+		}
+	}
+
+	&__image-box {
+		position: relative;
+		z-index: 0;
+		margin: 0;
+		.Size(470px, 327px);	
+		will-change: transform;
+		.Transition(~'transform @{timeMedium} @{easingPrimary}');
+		.TransformBase(~'translate(0%, 0%) scale(0.6, 0.6)');
+
+		@media @mediaMobileXL {
+			margin: 50px 0 70px 0;
+			.TransformBase(~'translate(0%, 0%) scale(1, 1)');
+		}		
+
+		@media @mediaTabletXl {
+			margin: 0;
+		}		
+
+		img {
+			.Size(100%, 100%);
+		}
+
+		&:before {
+			content: ' ';
+			display: block;
+			position: absolute;
+			.Size(470px, 327px);			
+			background-color: transparent;
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: cover;
+			top: 37px;
+			left: 26px;
+			background-image: url("@{srcImages}/highlights_linka.svg");
+			z-index: -1;
+		}		
+	}	
+}

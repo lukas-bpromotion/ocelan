@@ -1,0 +1,113 @@
+/*
+Action bar component
+*/
+/* 
+    Created on : 27.3.2018, 11:44:43
+    Author     : Lukáš
+*/
+
+@c_about_center: ~'c-about-center';
+
+.@{c_about_center} {
+  position: relative;
+  padding: 0 30px;
+  z-index: 1;
+
+  @media @mediaMobileXL {
+    padding: 0 0 0 50px;
+  }		
+
+  &__content {
+    .Flexbox;
+    .FlexDirection(column);
+    .FlexJustify(flex-start);
+    .AlignItems(center); 
+
+    @media @mediaMobileXL {
+      .FlexDirection(row);
+      .FlexJustify(flex-end);
+    }		
+  }
+
+  &__image-box {    
+    display: inline-block;
+    overflow: hidden;
+    max-width: 260px;
+    .Size(100%, 147px);
+    .BoxShadow(@bsBigBlack);
+    .ZeroFont;
+
+    @media @mediaMobileXL {
+      max-width: none;
+      .Size(360px, 254px);
+    }		
+
+    @media @mediaTabletM {
+      .Size(712px, 400px);
+    }	
+
+    @media @mediaTabletXl {
+      .Size(1090px, 613px);
+    }		
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  &__text-box {
+    text-align: center;
+    
+    @media @mediaMobileXL {
+      text-align: left;
+      min-width: 250px;
+    }	
+
+    @media @mediaTabletM {
+      width: 250px;
+      margin-right: 80px;
+    }		
+
+    @media @mediaTabletXl {
+      margin-right: 180px;
+    }		
+
+    h2 {
+      font-family: @secondFont;
+      font-weight: @fwBold;
+      margin: 0 0 20px 0;
+      padding: 0;
+      color: @colorGray;
+      @fontSizeBase-px: 30;
+      @fontSizeActual-px: 30;
+      @lineheightBase-px: 41;		
+      .SetFont;	
+
+      @media @mediaTabletS {
+        @fontSizeBase-px: 40;
+        @fontSizeActual-px: 40;
+        @lineheightBase-px: 55;		
+        .SetFont;	
+      }		
+    }
+  }
+
+  &__link {
+    display: none;
+    @media @mediaMobileXL {
+      display: inline-block;
+    }	
+
+    &--mobile {
+      margin-top: 30px;
+      display: inline-block;
+      @media @mediaMobileXL {
+        display: none;
+      }	
+    }
+  }
+
+}

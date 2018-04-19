@@ -1,0 +1,43 @@
+/*
+Objekt vycentrovaneho obrazku
+*/
+/* 
+    Created on : 17.5.2017, 16:54:49
+    Author     : Lukáš
+*/
+
+.o-image-center {
+	&__original {
+		max-width: none;
+		max-height: 100%;
+		width: auto;
+		height: 100%;
+		display: block;
+		
+		&.is-replaced {
+			display: none;
+		}
+	}
+
+	&__alternative {
+		display: none;
+		height: 100%;
+		width: 100%;
+		max-width: 100%;
+		max-height: 100%;		
+		background-repeat: no-repeat;
+		background-position: center;
+		.BackgroundSize(cover);
+		.Scale(1, 1);
+
+		&.is-replaced {
+			display: block;
+			z-index: 0;
+			position: relative;
+		}
+
+		&--contain {			
+			.BackgroundSize(contain);
+		}
+	}
+}

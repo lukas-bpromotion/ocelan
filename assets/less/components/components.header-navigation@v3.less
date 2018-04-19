@@ -1,0 +1,76 @@
+/*
+Komponenta menu v zahlavi version 3
+*/
+/* 
+    Created on : 15.5.2017, 15:46:15
+    Author     : Lukáš
+*/
+
+.c-header-navigation-v3 {
+	position: fixed;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: calc(~'100% - 80px');
+	top: 80px;
+	left: 0;
+	z-index: 0;
+	display: block;
+	overflow: auto;
+	background-color: @colorWhite;
+	.Translate(0px; calc(~'-100% - 80px'));
+	.Transition(~'transform @{timeMedium} @{easingPrimary}');
+
+	@media @mediaTabletXl {
+		position: relative;
+		width: auto;
+		height: auto;
+		top: auto;
+		left: auto;
+		overflow: visible;
+		background-color: transparent;
+		z-index: 0;		
+		.Translate(0px; 0px);
+	}
+
+	&.is-open {
+		.Translate(0px; 0px);
+	}
+
+	& > * {
+		padding: 0px 20px;
+		@media @mediaTabletXl {
+			&:not(:first-child) {
+				margin: 0 0 0 40px;
+			}
+		}		
+	}
+
+	&__item {
+		padding: 0;
+		margin: 0;
+		vertical-align: middle;			
+		display: block;
+
+		@media @mediaTabletXl {
+			display: inline-block;
+		}		
+	}	
+
+	&__link {
+		padding: 14px 20px;
+		margin: 0;
+		font-size: 1rem;
+		line-height: 1.3125;
+		display: block;
+		text-align: center;
+
+		@media @mediaTabletXl {
+			display: inline-block;
+		}
+
+		&.is-active {
+			text-decoration: underline;
+		}
+	}
+}

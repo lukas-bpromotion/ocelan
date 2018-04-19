@@ -1,0 +1,83 @@
+/*
+GrayBox component
+*/
+/* 
+    Created on : 20.11.2017, 17:08:33
+    Author     : Lukáš
+*/
+
+.c-gray-box {
+	.Size(auto, auto);
+	margin: 50px auto 0 auto;
+	padding: 30px 20px;
+	background-color: @colorGrayLight;
+	.BoxShadow(@bsMediumBlack35O);
+
+	@media @mediaTabletL {
+		.Size(780px, auto);
+		margin: 80px auto 0 auto;
+		padding: 40px;
+	}	
+
+	&__list {
+		font-weight: @fwBold;
+		padding-top: 30px;
+	}
+
+	h2 {
+		padding-top: 0;
+		margin-top: 80px;		
+
+		&:first-child {
+			margin-top: 0px;			
+		}
+
+		@media @mediaTabletL {
+			margin-top: 50px;		
+
+			&:first-child {
+				margin-top: 0px;			
+			}
+		}	
+
+		&.gb-project {
+			padding-left: 50px;
+			position: relative;
+
+			&:before {
+				content: ' ';
+				display: block;
+				position: absolute;
+				top: 2px;
+				left: 0px;
+				background-image: url("@{srcImages}/ico_time_management.svg");
+				background-repeat: no-repeat;
+				background-size: contain;
+				background-position: center;
+				.Size(36px, 40px);
+			}
+		}
+
+		&.gb-breeam {
+			padding-left: 50px;
+			position: relative;
+
+			&:before {
+				content: ' ';
+				display: block;
+				position: absolute;
+				top: 3px;
+				left: 0px;
+				background-image: url("@{srcImages}/ico_green_certification.svg");
+				background-repeat: no-repeat;
+				background-size: contain;
+				background-position: center;
+				.Size(40px, 40px);
+			}
+		}
+	}
+
+	h3 + p {
+		padding-top: 20px;
+	}
+}

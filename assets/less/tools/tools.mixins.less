@@ -1,0 +1,249 @@
+/* -----------------------------------------------------------------------------------------
+	Funkce použitelné jako mixiny, většinou usnadňující zápis dlouhých skupin vlastností.
+-------------------------------------------------------------------------------------------- */
+
+// Clearování floatů
+.Clear() {
+	&:before,
+	&:after {
+		content: " ";
+		display: table;
+	}
+	&:after {
+		clear: both;
+	}
+}
+
+// Velikost prvku
+.Size(@width; @height) {
+	width: @width;
+	height: @height;
+}
+
+// Zabrání, aby se zobrazil při focusu rámeček kolem klikacího objektu
+.PreventOutline() {
+	&:focus {
+		outline: 0;
+	}
+}
+
+// Opačné podtržení u hoveru (podtrhne se až při hover, jinak bez podtržení).
+.ReverseHover() {
+	text-decoration: none;
+
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
+// Skryje text v elementu (použijte pokud chcete text nahradit obrázkem)
+.HideText() {
+	background-color: transparent;
+	border: 0;
+	color: transparent;
+	font: ~"0/0" a;
+	text-shadow: none;
+}
+
+// Stin pod textem
+.TextShadow(@value) {
+	text-shadow: @value;
+}
+
+.ZeroFont() {
+	font-size: 0px;
+	line-height: 0;
+}
+
+// Vycentrování blokového elementu
+.CenterBlock() {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+// Změní počítání šířky/výšky tak, že padding je součástí width.
+.QuirkSize() {
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+			box-sizing: border-box;
+}
+
+// Usekte přečuhující text a nahradí ho tečkama
+.TruncateText() {
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+// Usekte přečuhující text a nahradí ho tečkama - viceradkovy
+.TruncateMultilineText(@fontSize, @lineHeight, @countRows) {
+	display: block;
+	display: -webkit-box;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	height: calc(~'@{fontSize} * @{lineHeight} * @{countRows}');	
+	-webkit-line-clamp: @countRows;
+	-webkit-box-orient: vertical;
+}
+
+// Průhlednost prvku, zádává se 0 až 1
+.Opacity(@opacity) {
+	opacity: @opacity;
+	@opacity-ie: (@opacity * 100);
+	filter: ~"alpha(opacity=@{opacity-ie})";
+}
+
+// Změní vykreslování barvy pozadí
+.BackgroundClip() {
+	-webkit-background-clip: padding-box;
+	   -moz-background-clip: padding-box;
+			background-clip: padding-box;
+}
+
+// Nastaví průhledný rámeček, průhlednost je 0 až 1
+.BorderColor(@color: #ffffff; @alpha: 1) {
+	border-color: hsla(hue(@color), saturation(@color), lightness(@color), @alpha);
+	.BackgroundClip();
+}
+
+.BorderTopColor(@color: #ffffff; @alpha: 1) {
+	border-top-color: hsla(hue(@color), saturation(@color), lightness(@color), @alpha);
+	.BackgroundClip();
+}
+
+.BorderBottomColor(@color: #ffffff; @alpha: 1) {
+	border-bottom-color: hsla(hue(@color), saturation(@color), lightness(@color), @alpha);
+	.BackgroundClip();
+}
+
+.BorderRightColor(@color: #ffffff; @alpha: 1) {
+	border-right-color: hsla(hue(@color), saturation(@color), lightness(@color), @alpha);
+	.BackgroundClip();
+}
+
+// Vertikální gradient
+.VerticalGradient(@topColor: #eeeeee; @bottomColor: #666666; @topPercent: 0%; @bottomPercent: 100%) {
+	background-repeat: repeat-x;
+	background-image: -webkit-linear-gradient(top, @topColor @topPercent, @bottomColor @bottomPercent);       // Safari 5.1-6, Chrome 10+
+	background-image:      -o-linear-gradient(top, @topColor @topPercent, @bottomColor @bottomPercent);       // Opera 12
+	background-image:         linear-gradient(to bottom, @topColor @topPercent, @bottomColor @bottomPercent); // Standard, IE10, Firefox 16+, Opera 12.10+, Safari 7+, Chrome 26+
+	filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",argb(@topColor),argb(@bottomColor))); // IE9 and down
+}
+
+// Horizontální gradient
+ .HorizontalGradient(@leftColor: #eeeeee; @rightColor: #666666; @leftPercent: 0%; @rightPercent: 100%) {
+	background-repeat: repeat-x;
+	background-image: -webkit-linear-gradient(left, @leftColor @leftPercent, @rightColor @rightPercent); // Safari 5.1-6, Chrome 10+
+	background-image: -o-linear-gradient(left, @leftColor @leftPercent, @rightColor @rightPercent); // Opera 12
+	background-image: linear-gradient(to right, @leftColor @leftPercent, @rightColor @rightPercent); // Standard, IE10, Firefox 16+, Opera 12.10+, Safari 7+, Chrome 26+
+	filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=1)",argb(@leftColor),argb(@rightColor))); // IE9 and down
+}
+
+// Vypnutí gradientu pro IE9 a nižší
+.DisableGradient() {
+	filter: e(%("progid:DXImageTransform.Microsoft.gradient(enabled = false)")) !important;
+}
+
+// Retina BG image
+.RetinaBG(@file-1x; @file-2x; @width-1x; @height-1x) {
+	background-image: url("@{file-1x}");
+
+	@media @mediaRetina {
+		background-image: url("@{file-2x}");
+		background-size: @width-1x @height-1x;
+	}
+}
+
+// Line height v %
+.SetFont() {
+	font-size: unit(@fontSizeActual-px / @baseFontSize, rem);
+	line-height: @lineheightBase-px / @fontSizeBase-px;
+}
+
+// Stín
+.BoxShadow(@shadow) {
+	-webkit-box-shadow: @shadow;
+	   -moz-box-shadow: @shadow;
+			box-shadow: @shadow;
+}
+
+// Border radius
+.BorderRadius(@radius) {
+	-webkit-border-radius: @radius;
+	   -moz-border-radius: @radius;
+			border-radius: @radius;
+
+}
+
+.BorderRadiusTopLeft(@radius) {
+	-webkit-border-top-left-radius: @radius;
+		-moz-border-radius-topleft: @radius;
+			border-top-left-radius: @radius;
+}
+
+.BorderRadiusTopRight(@radius) {
+	-webkit-border-top-right-radius: @radius;
+		-moz-border-radius-topright: @radius;
+			border-top-right-radius: @radius;
+}
+
+.BorderRadiusBottomLeft(@radius) {
+	-webkit-border-bottom-left-radius: @radius;
+		-moz-border-radius-bottomleft: @radius;
+			border-bottom-left-radius: @radius;
+}
+
+.BorderRadiusBottomRight(@radius) {
+	-webkit-border-bottom-right-radius: @radius;
+		-moz-border-radius-bottomright: @radius;
+			border-bottom-right-radius: @radius;
+}
+
+.BorderRadiusTop(@radius) {
+	 .BorderRadiusTopLeft(@radius);
+	.BorderRadiusTopRight(@radius);
+}
+
+.BorderRadiusBottom(@radius) {
+	 .BorderRadiusBottomLeft(@radius);
+	.BorderRadiusBottomRight(@radius);
+}
+
+.BorderRadiusLeft(@radius) {
+	   .BorderRadiusTopLeft(@radius);
+	.BorderRadiusBottomLeft(@radius);
+}
+
+.BorderRadiusRight(@radius) {
+	   .BorderRadiusTopRight(@radius);
+	.BorderRadiusBottomRight(@radius);
+}
+
+// Běžná přechodová animace pro bgc
+.BgFade() {
+	.Transition(background-color 0.2s);
+}
+
+// Animace pro spin
+.SpinAnimation(@name) {
+	@-webkit-keyframes @name {
+		0% { -webkit-transform: rotate(0deg); }
+		100% { -webkit-transform: rotate(360deg); }
+	}
+
+	@-moz-keyframes @name {
+		0% { -moz-transform: rotate(0deg); }
+		100% { -moz-transform: rotate(360deg); }
+	}
+
+	@-o-keyframes @name {
+		0% { -o-transform: rotate(0deg); }
+		100% { -o-transform: rotate(360deg); }
+	}
+
+	@keyframes @name {
+		0% { transform: rotate(0deg); }
+		100% { transform: rotate(360deg); }
+	}
+}

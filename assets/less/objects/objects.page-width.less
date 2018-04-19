@@ -1,0 +1,171 @@
+/*
+Objekt sirky stranky
+*/
+/* 
+    Created on : 17.5.2017, 15:56:58
+    Author     : Lukáš
+*/
+
+.o-page-width {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  padding: 0 30px;
+  margin: 0 auto;
+  max-width: 1220px;
+
+  @media @mediaMobileL {
+    width: 100%;
+    padding: 0 50px;
+  }	
+
+  @media @mediaTabletM {
+    width: 100%;
+    padding: 0 50px;
+  }
+
+
+  @media @mediaTabletXl {
+    width: 1120px;	
+    padding: 0;
+  }
+  
+  &--map {
+    padding: 0 20px;
+    
+    @media @mediaMobileL {
+      width: 100%;
+      padding: 0 50px;
+    }	
+
+    @media @mediaTabletM {
+      width: 100%;
+      padding: 0 50px;
+    }
+
+
+    @media @mediaTabletXl {
+      width: 1120px;	
+      padding: 0;
+    }
+  }
+
+  &--action-bar {
+    padding: 0;
+    
+    @media @mediaMobileL {
+      width: 100%;
+      padding: 0 50px;
+    }	
+
+    @media @mediaTabletM {
+      width: 100%;
+      padding: 0 50px;
+    }
+
+
+    @media @mediaTabletXl {
+      width: 1120px;	
+      padding: 0;
+    }
+  }
+  
+  &--open-hours {
+    padding: 0;
+    
+    @media @mediaMobileXL {
+      width: 100%;
+      padding: 0 50px;
+    }	
+
+    @media @mediaTabletM {
+      width: 100%;
+      padding: 0 50px;
+    }
+
+
+    @media @mediaTabletXl {
+      width: 1120px;	
+      padding: 0;
+    }
+  }
+
+  &--mobile-wide {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    padding: 0 30px;
+    margin: 0 auto;
+
+    @media @mediaMobileL {
+      padding: 0 20px;
+    }	
+
+    @media @mediaTabletM {
+      width: 49rem;		
+      padding: 0;
+    }
+
+
+    @media @mediaTabletXl {
+      width: 75rem;		
+    }
+  }
+
+  &--text-block {
+    max-width: 700px;
+
+    @media @mediaMobileL {
+      padding: 0;
+    }
+  }
+
+  &--text-block-small {
+    max-width: 550px;		
+
+    @media @mediaMobileL {
+      padding: 0;
+    }
+  }
+
+  &--no-indent {
+    padding: 0;
+  }
+
+  &--gallery {
+    padding: 0;
+
+    @media @mediaMobileL {
+      width: 30rem;
+      padding: 0;
+    }	
+
+    @media @mediaTabletM {
+      width: 49rem;		
+    }
+
+
+    @media @mediaTabletXl {
+      width: 75rem;		
+    }
+  }
+
+  &--slider {
+    padding: 0;
+
+    @media @mediaMobileL {
+      width: 100vw;
+      padding: 0 50px;
+    }	
+
+    @media @mediaTabletM {
+      width: 100vw;
+      padding: 0 50px;
+    }
+
+    @media @mediaTabletXl {
+      width: 1120px;		
+      padding: 0;
+    }
+  }
+}

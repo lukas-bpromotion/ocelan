@@ -1,0 +1,164 @@
+/*
+Work component
+*/
+/* 
+    Created on : 10.11.2017, 14:19:32
+    Author     : Lukáš
+*/
+
+.c-values {
+	position: relative;
+	
+	&__big-text {
+		position: absolute;
+		z-index: -1;
+		padding: 0;
+		margin: 0;
+		top: 155px;
+		left: 0;
+		width: 100%;
+		display: none;
+		text-align: center;
+		font-weight: @fwBlack;
+		color: @colorGrayLight;
+		text-transform: uppercase;
+		@fontSizeBase-px: 200;
+		@fontSizeActual-px: 100;
+		@lineheightBase-px: 252;		
+		.SetFont;			
+
+		@media @mediaMobileL {	
+			top: -250px;
+			display: block;
+		}
+
+		@media @mediaTabletM {	
+			top: -150px;
+			@fontSizeActual-px: 180;
+			.SetFont;	
+		}
+
+		@media @mediaTabletXl {	
+			top: -100px;
+			@fontSizeBase-px: 300;
+			@fontSizeActual-px: 300;
+			@lineheightBase-px: 377;		
+			.SetFont;	
+		}
+	}	
+
+	&__content {
+		.ZeroFont;	
+
+		@media @mediaMobileL {	
+
+		}
+
+		@media @mediaTabletM {	
+		}
+
+		@media @mediaTabletXl {	
+			padding-top: 50px;
+		}
+	}
+
+	&__item {
+		padding: 0;
+		position: relative;
+		display: block;
+		margin: 50px auto 0 auto;
+		width: 225px;
+		z-index: 0;
+		.Transition(~'z-index @{timeMedium} @{easingPrimary}');
+		
+		&.open {
+			z-index: 10;
+		}
+
+		&:not(:first-child) {
+			margin-top: 80px;
+		}		
+
+		@media @mediaMobileL {	
+			display: inline-block;
+			margin: 80px 0 0 0;
+			width: 225px;
+
+			&:not(:first-child) {
+				margin-top: 80px;
+			}		
+
+			&:not(:nth-of-type(2n+1)) {
+				margin-left: 30px;
+			}		
+		}
+
+		@media @mediaTabletM {	
+			margin-top: 100px;
+			width: 225px;
+
+			&:not(:first-child) {
+				margin-top: 100px;
+			}		
+
+			&:not(:nth-of-type(2n+1)) {
+				margin-left: 0;
+			}		
+
+			&:not(:nth-of-type(3n+1)) {
+				margin-left: 54px;
+			}		
+		}
+
+		@media @mediaTabletXl {	
+			width: 260px;
+
+			&:not(:nth-of-type(3n+1)) {
+				margin-left: 170px;
+			}	
+		}
+	}	
+
+	&__item-title {
+		margin: 0;
+		padding: 0;
+		height: 99px;
+		overflow: hidden;
+		font-weight: @fwBold;
+		color: @colorBlack;
+		font-family: @secondFont;
+		@fontSizeBase-px: 24;
+		@fontSizeActual-px: 24;
+		@lineheightBase-px: 33;			
+		.SetFont;	
+
+		@media @mediaTabletXl {	
+			height: auto;
+			overflow: visible;
+			@fontSizeBase-px: 34;
+			@fontSizeActual-px: 34;
+			@lineheightBase-px: 46;			
+			.SetFont;	
+		}
+	}
+
+	&__item-text {		
+		padding: 10px 0 0 0;
+		margin: 0;	
+		height: 52px;
+		overflow: hidden;
+		font-weight: @fwRegular;
+		color: @colorGrayDarker;
+		font-family: @thirdFont;
+		@fontSizeBase-px: 16;
+		@fontSizeActual-px: 16;
+		@lineheightBase-px: 26;			
+		.SetFont;	
+
+		@media @mediaTabletXl {	
+			height: auto;
+			overflow: visible;
+		}
+	}
+
+}

@@ -1,0 +1,32 @@
+/*
+Objekt tlacitka
+*/
+/* 
+    Created on : 16.5.2017, 11:38:53
+    Author     : Lukáš
+*/
+
+.o-button {
+  position: relative;
+  display: inline-block;	
+  padding: 13px 20px;
+  font-weight: @fwRegular;
+  color: @colorRed;
+  background-color: transparent;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-sizing: border-box;
+  border: 1px solid @colorRed;
+  z-index: 1;
+  @fontSizeBase-px: 14;
+  @fontSizeActual-px: 14;
+  @lineheightBase-px: 16;		
+  .SetFont;	
+  .Transition(~'background @{timeMedium} @{easingSecondary}, box-shadow @{timeMedium} @{easingSecondary}, z-index @{timeMedium} @{easingSecondary}, border @{timeMedium} @{easingSecondary}, color @{timeMedium} @{easingSecondary}');
+
+  &:hover {
+    z-index: 10; 
+    color: @colorWhite;
+    background-color: @colorRed;
+  }
+}

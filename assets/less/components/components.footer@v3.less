@@ -1,0 +1,151 @@
+/*
+Komponenta zapati version 2
+*/
+/* 
+    Created on : 6.6.2017, 11:36:33
+    Author     : Lukáš
+*/
+
+.c-footer-v3 {	
+	width: 100%;
+	height: auto;
+	background-color: @colorGrayDarker;
+	overflow: hidden;
+
+	&__text-block {
+		position: relative;
+		padding: 30px 0;	
+		box-sizing: border-box;
+		.Size(100%, 160px);
+		.Flexbox;
+		.FlexDirection(column-reverse);
+		.FlexJustify(space-between);
+		.AlignItems(center);	
+
+		@media @mediaMobileL {	
+			.Size(100%, 70px);
+			.FlexDirection(row);
+			.FlexJustify(space-between);
+			.AlignItems(center);	
+			padding: 0 20px;		
+		}		
+		
+		@media @mediaTabletM {
+			padding: 0;		
+		}
+	}
+
+	&__logo {
+		display: inline-block;
+		.Size(142px, 30px);
+
+		span {
+			display: inline-block;
+			.Size(100%, 100%);
+
+			svg {
+				display: inline-block;
+				.Size(100%, 100%);
+			}
+		}
+	}
+
+	&__bpromo {
+		display: none;
+		padding: 0;
+		margin: 0;		
+		text-align: left;
+		font-weight: @fwRegular;
+		color: @colorWhite70O;
+		@fontSizeBase-px: 12;
+		@fontSizeActual-px: 12;
+		@lineheightBase-px: 15;		
+		.SetFont;
+
+		@media @mediaMobileL {	
+			
+		}
+		
+		@media @mediaTabletM {
+			display: inline-block;
+		}
+
+		&:hover {
+			color: @colorWhite;
+
+			& > span {				
+
+				&:last-of-type {					
+
+					svg {
+						&.colorable, .colorable {
+							fill: @colorWhite;
+						}
+					}
+				}
+			}
+		}
+
+		& > span {
+			vertical-align: middle;
+			display: inline-block;
+			position: relative;
+
+			&:last-of-type {
+				margin-top: 2px;
+				margin-left: 9px;
+
+				svg {
+					&.colorable, .colorable {
+						fill: @colorWhite70O;
+						.Transition(~'fill @{timeMedium} @{easingPrimary}');
+					}
+				}
+			}
+		}
+	}
+
+	&__social-box {
+		position: relative;
+		display: inline-block;		
+
+		@media @mediaMobileL {	
+			
+		}
+		
+		@media @mediaTabletM {
+			/*position: absolute;
+			left: 50%;
+			top: 50%;
+			.Translate(-50%, -50%);*/
+		}
+	}
+
+	&__social-link {
+		position: relative;
+		display: inline-block;
+		z-index: 1;
+		.Size(30px, 30px);
+		.ZeroFont;
+
+		&:not(:first-of-type) {
+			margin-left: 30px;
+		}
+
+		svg {
+			&.colorable, .colorable {
+				fill: @colorWhite70O;
+				.Transition(~'fill @{timeMedium} @{easingPrimary}');
+			}
+		}
+
+		&:hover {
+
+			svg {
+				&.colorable, .colorable {
+					fill: @colorWhite;
+				}
+			}
+		}
+	}
+}

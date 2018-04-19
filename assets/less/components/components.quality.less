@@ -1,0 +1,47 @@
+/*
+Work component
+*/
+/* 
+    Created on : 10.11.2017, 14:19:32
+    Author     : Lukáš
+*/
+
+.c-quality {
+	position: relative;
+	
+	&__big-text {		
+		position: absolute;
+		z-index: -1;
+		padding: 0;
+		margin: 0;
+		top: 175px;
+		left: auto;
+		width: 100%;
+		text-align: center;
+		font-weight: @fwBlack;
+		color: @colorGrayLight;
+		text-transform: uppercase;
+		@fontSizeBase-px: 200;
+		@fontSizeActual-px: 100;
+		@lineheightBase-px: 252;		
+		.SetFont;			
+
+		@media @mediaMobileL {	
+			
+		}
+
+		@media @mediaTabletM {
+			top: 155px;
+			@fontSizeActual-px: 180;
+			.SetFont;	
+		}
+
+		@media @mediaTabletXl {	
+			top: 190px;
+			@fontSizeBase-px: 300;
+			@fontSizeActual-px: 300;
+			@lineheightBase-px: 377;		
+			.SetFont;	
+		}
+	}	
+}

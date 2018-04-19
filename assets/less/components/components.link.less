@@ -1,0 +1,46 @@
+/*
+Komponenta odkazu
+*/
+/* 
+    Created on : 6.6.2017, 12:39:24
+    Author     : Lukáš
+*/
+
+.c-link {
+
+	&:not(:first-child) {
+		margin-top: 20px;
+
+		@media @mediaTabletS {
+			margin-top: 40px;
+		}
+	}
+
+	&--big {
+		font-size: 1rem;
+		line-height: 1.04167;
+
+		@media @mediaTabletS {
+			font-size: 1.5rem;
+		}
+	}
+
+	span:not(.jq-bp-svg) {
+		vertical-align: middle;
+	}
+
+	svg {
+		vertical-align: middle;
+		padding-right: 15px;
+		.Size(25px, 25px);	
+
+		@media @mediaTabletS {
+			padding-right: 25px;
+		}
+
+		.colorable {
+			fill: @colorBlack;
+			stroke: @colorBlack;
+		}
+	}	
+}

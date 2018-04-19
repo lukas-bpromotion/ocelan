@@ -1,0 +1,362 @@
+/*
+Work component
+*/
+/* 
+    Created on : 10.11.2017, 14:19:32
+    Author     : Lukáš
+*/
+
+.c-contacts {
+	position: relative;
+
+	&__content {
+		.ZeroFont;
+		padding-top: 30px;
+		text-align: center;
+
+		@media @mediaMobileXL {
+			padding-top: 26px;
+		}
+
+		@media @mediaTabletXl {
+			padding-top: 66px;
+			text-align: left;
+		}
+	}
+
+	&__item-outer {
+		margin-top: 20px;
+		display: block;
+		padding: 0;
+		box-sizing: border-box;
+		vertical-align: top;
+		.Size(100%, auto);		
+
+		@media @mediaMobileXL {
+			margin-top: 34px;
+			padding: 0;
+			display: inline-block;
+			.Size(543px, 344px);		
+		}
+
+		@media @mediaTabletXl {			
+
+			&:not(:nth-of-type(2n+1)) {
+				margin-left: 34px;
+			}	
+		}
+
+		&:hover {
+			.c-contacts__item {
+				.BoxShadow(@bsModerateBlack35O);
+			}
+
+			.c-contacts__photo-box {
+				div {
+					.Scale(1.1);	
+				}
+			}
+		}
+
+		&--red {
+			height: 500px;
+			background-color: @colorRed;
+			background-image: url("@{srcImages}/person_shadow.png");
+			background-repeat: no-repeat;
+			background-size: auto;
+			background-position: bottom left;			
+
+			@media @mediaMobileXL {
+				.Size(543px, 344px);
+			}
+
+			.c-contacts__item {
+				padding: 30px 20px;
+				background-color: transparent;		
+				.FlexDirection(row);
+				.FlexJustify(flex-end);
+				.AlignItems(center);
+
+				@media @mediaMobileXL {
+					padding: 0;			
+					.Flexbox;
+					.Size(543px, 344px);
+				}
+			}
+		}
+	}
+
+	&__item {
+		margin: 0;
+		padding: 30px 20px;
+		box-sizing: border-box;
+		display: block;
+		background-color: @colorWhite;		
+		will-change: box-shadow;
+		.Size(100%, 100%);
+		.BoxShadow(@bsMediumBlack35O);
+		.Transition(~'box-shadow @{timeMedium} @{easingPrimary}');	
+
+		@media @mediaMobileXL {
+			padding: 0;			
+		}	
+	}		
+
+	&__photo-box-mobile {
+		position: relative;
+		overflow: hidden;
+		display: block;
+		margin: 0 auto;
+		.BorderRadius(50%);
+		.Size(140px, 140px);
+
+		@media @mediaMobileXL {
+			display: none;
+		}
+	}	
+
+	&__photo-box {
+		position: relative;
+		overflow: hidden;
+		display: none;
+		.Size(182px, 100%);
+
+		@media @mediaMobileXL {
+			display: inline-block;
+		}
+
+		div {
+			.Transition(~'transform @{timeLong} @{easingSecondary}');	
+		} 
+	}
+
+	&__title {
+		width: 100%;
+		margin: 0;
+		padding: 0;
+		font-weight: @fwBold;
+		color: @colorBlack;
+		font-family: @secondFont;
+		text-align: left;
+		@fontSizeBase-px: 24;
+		@fontSizeActual-px: 24;
+		@lineheightBase-px: 33;			
+		.SetFont;	
+
+		&--white {
+			color: @colorWhite;
+			@fontSizeBase-px: 34;
+			@fontSizeActual-px: 34;
+			@lineheightBase-px: 46;			
+			.SetFont;	
+		}
+	}
+
+	&__position {
+		margin: 0;
+		padding: 10px 0 16px 0;
+		font-weight: @fwRegular;
+		color: @colorGrayDarker;
+		font-family: @thirdFont;
+		text-align: left;
+		@fontSizeBase-px: 16;
+		@fontSizeActual-px: 16;
+		@lineheightBase-px: 26;			
+		.SetFont;	
+	}
+
+	&__phone {
+		display: inline-block;
+		position: relative;
+		margin: 4px 0 0 0;
+		padding: 0 0 0 28px;		
+		text-align: left;
+
+		&:before {
+			content: ' ';
+			display: block;
+			position: absolute;
+			top: 6px;
+			left: 2px;
+			.Size(14px, 14px);			
+			background-image: url("@{srcImages}/ico_phone_black.svg");
+			background-repeat: no-repeat;
+			background-size: contain;
+			background-position: center;
+		}
+
+		span {
+			font-weight: @fwBold;
+			color: @colorBlack;
+			font-family: @thirdFont;
+			@fontSizeBase-px: 16;
+			@fontSizeActual-px: 16;
+			@lineheightBase-px: 26;			
+			.SetFont;
+			overflow: hidden;
+			display: inline-block;
+			position: relative;
+
+			&:before {
+				content: ' ';
+				display: block;
+				position: absolute;
+				left: 0px;
+				bottom: 3px;
+				width: 100%;
+				height: 1px;
+				background-color: @colorBlack;
+				will-change: transform;
+				.Transition(~'transform @{timeMedium} @{easingPrimary}');
+				.Translate(-105%; 0px);
+			}
+		}
+
+		&--smart {
+			&:before {
+				top: 4px;
+				left: 3px;
+				.Size(11px, 17px);			
+				background-image: url("@{srcImages}/ico_smart_black.svg");
+			}
+		}
+
+		&:hover {
+			color: @colorBlack;
+			text-decoration: none;
+
+			span {			
+
+				&:before {
+					.Translate(0px; 0px);
+				}
+			}
+		}
+	}
+
+	&__email {
+		display: inline-block;
+		position: relative;
+		margin: 5px 0 0 0;
+		padding: 0 0 0 28px;		
+		text-align: left;
+
+		&:before {
+			content: ' ';
+			display: block;
+			position: absolute;
+			top: 8px;
+			left: 1px;
+			.Size(15px, 12px);			
+			background-image: url("@{srcImages}/ico_email.svg");
+			background-repeat: no-repeat;
+			background-size: contain;
+			background-position: center;
+		}
+
+		span {
+			font-weight: @fwRegular;
+			color: @colorRed;
+			font-family: @thirdFont;			
+			@fontSizeBase-px: 16;
+			@fontSizeActual-px: 16;
+			@lineheightBase-px: 26;			
+			.SetFont;
+			overflow: hidden;
+			display: inline-block;
+			position: relative;
+
+			&:before {
+				content: ' ';
+				display: block;
+				position: absolute;
+				left: 0px;
+				bottom: 3px;
+				width: 100%;
+				height: 1px;
+				background-color: @colorRed;
+				will-change: transform;
+				.Transition(~'transform @{timeMedium} @{easingPrimary}');
+				.Translate(-105%; 0px);
+			}
+		}
+
+		&:hover {
+			color: @colorRed;
+			text-decoration: none;
+
+			span {	
+				&:before {
+					.Translate(0px; 0px);
+				}
+			}
+
+		}
+	}
+
+	&__detail-box {
+		position: relative;
+		box-sizing: border-box;	
+		display: block;
+		text-align: left;
+		padding: 30px 0 0 0;
+		vertical-align: top;
+		.Size(100%, auto);
+
+		@media @mediaMobileXL {
+			display: inline-block;
+			overflow: hidden;
+			padding: 40px;
+			.Size(361px, 100%);
+		}
+
+		&--red {
+			padding: 0;		
+			display: block;
+			.FlexDirection(column);
+			.FlexJustify(space-between);
+			.AlignItems(flex-start);
+
+			@media @mediaMobileXL {
+				padding: 40px;
+				.Size(287px, 100%);		
+				.FlexboxInline;
+			}
+		}
+	}
+
+	&__parameter {
+		margin: 0;
+		padding: 0;
+		font-weight: @fwRegular;
+		color: @colorBlack;
+		font-family: @thirdFont;
+		text-align: left;
+		@fontSizeBase-px: 16;
+		@fontSizeActual-px: 16;
+		@lineheightBase-px: 26;			
+		.SetFont;	
+	}
+
+	&__project-box {
+		padding: 15px 0 0 0;
+		text-align: left;
+		.ZeroFont;
+	}
+
+	&__project {
+		display: inline-block;
+		margin: 0;
+		padding: 5px 15px 0 0;
+		font-weight: @fwRegular;
+		color: @colorGrayDarker;
+		font-family: @thirdFont;
+		text-align: left;
+		text-decoration: underline;
+		@fontSizeBase-px: 12;
+		@fontSizeActual-px: 12;
+		@lineheightBase-px: 26;			
+		.SetFont;	
+	}
+
+}

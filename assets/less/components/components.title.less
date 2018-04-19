@@ -1,0 +1,155 @@
+/*
+Title component
+*/
+/* 
+    Created on : 10.11.2017, 14:43:26
+    Author     : Lukáš
+*/
+
+.title {
+
+	&--primary {
+		font-family: @secondFont;
+		padding: 0;
+		margin: 0;		
+		display: block;
+		text-align: center;
+		font-weight: @fwBold;
+		color: @colorBlack;
+		@fontSizeBase-px: 24;
+		@fontSizeActual-px: 24;
+		@lineheightBase-px: 33;		
+		.SetFont;	
+
+		@media @mediaMobileL {	
+			@fontSizeActual-px: 38;
+			.SetFont;	
+		}
+		
+		@media @mediaTabletXl {	
+			@fontSizeBase-px: 50;
+			@fontSizeActual-px: 50;
+			@lineheightBase-px: 68;	
+			.SetFont;	
+		}
+	}
+
+	&--primary-white {
+		color: @colorWhite;
+	}	
+
+	&--secondary {
+		padding: 0;
+		margin: 0;		
+		display: block;
+		text-align: center;
+		font-weight: @fwLight;
+		color: @colorBlack;
+		@fontSizeBase-px: 24;
+		@fontSizeActual-px: 24;
+		@lineheightBase-px: 31;		
+		.SetFont;	
+
+		@media @mediaMobileL {	
+			@fontSizeActual-px: 28;	
+			.SetFont;	
+		}
+		
+		@media @mediaTabletXl {	
+			@fontSizeBase-px: 30;
+			@fontSizeActual-px: 30;
+			@lineheightBase-px: 38;		
+			.SetFont;	
+		}
+	}
+
+	&--ternary {
+		font-family: @secondFont;
+		padding: 0;
+		margin: 0;		
+		display: block;
+		text-align: left;
+		font-weight: @fwBold;
+		color: @colorBlack;
+		@fontSizeBase-px: 24;
+		@fontSizeActual-px: 24;
+		@lineheightBase-px: 33;		
+		.SetFont;			
+	}
+
+	&--white {
+		font-family: @secondFont;
+		padding: 0;
+		margin: 0;		
+		display: block;
+		text-align: left;
+		font-weight: @fwBold;
+		color: @colorWhite;
+		@fontSizeBase-px: 24;
+		@fontSizeActual-px: 24;
+		@lineheightBase-px: 33;		
+		.SetFont;	
+
+		@media @mediaTabletXl {	
+			@fontSizeBase-px: 34;
+			@fontSizeActual-px: 34;
+			@lineheightBase-px: 46;		
+			.SetFont;	
+		}
+	}
+
+	&--red {
+		font-family: @secondFont;
+		padding: 0;
+		margin: 0;		
+		display: block;
+		text-align: left;
+		font-weight: @fwBold;
+		color: @colorRed;
+		@fontSizeBase-px: 24;
+		@fontSizeActual-px: 24;
+		@lineheightBase-px: 33;		
+		.SetFont;	
+		
+		@media @mediaMobileL {	
+			@fontSizeActual-px: 28;	
+			.SetFont;	
+		}
+		
+		@media @mediaTabletXl {	
+			@fontSizeBase-px: 34;
+			@fontSizeActual-px: 34;
+			@lineheightBase-px: 46;		
+			.SetFont;	
+		}
+	}
+
+	&--grey {
+		font-family: @thirdFont;
+		padding: 0;
+		margin: 0;		
+		display: block;
+		text-align: left;
+		font-weight: @fwRegular;
+		color: @colorGrayDarker;
+		@fontSizeBase-px: 16;
+		@fontSizeActual-px: 16;
+		@lineheightBase-px: 26;		
+		.SetFont;		
+	}
+
+	&--small {
+		font-family: @thirdFont;
+		padding: 0;
+		margin: 0;		
+		display: block;
+		text-align: left;
+		font-weight: @fwBold;
+		color: @colorBlack;
+		text-transform: uppercase;
+		@fontSizeBase-px: 16;
+		@fontSizeActual-px: 16;
+		@lineheightBase-px: 26;		
+		.SetFont;		
+	}
+}

@@ -1,0 +1,61 @@
+/*
+Objekt zahlavi
+*/
+/* 
+    Created on : 15.5.2017, 15:55:09
+    Author     : Lukáš
+*/
+
+.o-header-v2 {
+	position: fixed;
+	width: 100%;	
+	height: 90px;
+	padding: 0 20px;
+	margin: 0;
+	top: 0;
+	left: 0;
+	z-index: 99;
+	box-sizing: border-box;
+	display: block;
+	.Transition(~'all @{timeMedium} @{easingPrimary}');
+  
+  @media @mediaMobileL {
+		padding: 0 50px;
+	}	
+
+	@media @mediaTabletXl {
+		padding: 0;
+		height: 120px;
+	}		
+
+	&__content {
+		position: relative;
+		width: 100%;	
+		height: 100%;
+		padding: 0;
+		margin: 0 auto;
+    max-width: 1120px;
+		box-sizing: border-box;
+		.Flexbox;
+		.FlexDirection(row);
+		.FlexJustify(space-between);
+		.AlignItems(center);
+
+		@media @mediaTabletXl {
+			width: 1120px;
+			margin: 0 auto;			
+		}		
+	}	
+
+	&.scrolled {
+		height: 60px;
+
+		@media @mediaTabletXl {
+			height: 80px;
+		}		
+	}
+
+	&.is-open {
+		z-index: 101;
+	}
+}

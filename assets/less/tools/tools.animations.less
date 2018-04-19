@@ -1,0 +1,222 @@
+/*
+Animace
+*/
+/* 
+    Created on : 29.8.2017, 8:47:51
+    Author     : Lukáš
+*/
+
+// Animace pro spin
+.SpinAnimation(@name) {
+	@-webkit-keyframes @name {
+		0% { -webkit-transform: rotate(0deg); }
+		100% { -webkit-transform: rotate(360deg); }
+	}
+
+	@-moz-keyframes @name {
+		0% { -moz-transform: rotate(0deg); }
+		100% { -moz-transform: rotate(360deg); }
+	}
+
+	@-o-keyframes @name {
+		0% { -o-transform: rotate(0deg); }
+		100% { -o-transform: rotate(360deg); }
+	}
+
+	@keyframes @name {
+		0% { transform: rotate(0deg); }
+		100% { transform: rotate(360deg); }
+	}
+}
+
+// Animace pro opacitu objektu
+.OpacityAnimation(@name) {
+	@-webkit-keyframes @name {
+		0% { 
+			.Scale(1.05);
+			.Opacity(0);
+		}
+		100% { 
+			.Scale(1);
+			.Opacity(1);
+		}
+	}
+
+	@-moz-keyframes @name {
+		0% { 
+			.Scale(1.05);
+			.Opacity(0);
+		}
+		100% { 
+			.Scale(1);
+			.Opacity(1);
+		}
+	}
+
+	@-o-keyframes @name {
+		0% { 
+			.Scale(1.05);
+			.Opacity(0);
+		}
+		100% { 
+			.Scale(1);
+			.Opacity(1);
+		}
+	}
+
+	@keyframes @name {
+		0% { 
+			.Scale(1.05);
+			.Opacity(0);
+		}
+		100% { 
+			.Scale(1);
+			.Opacity(1);
+		}
+	}
+}
+
+// Animace pro posuv z [0, 0] na [x, y] a zpet
+.TranslateAnimation(@name, @x, @y) {
+	@-webkit-keyframes @name {
+		0% { 
+			.Translate(0; 0);
+		}
+		50% { 
+			.Translate(@x; @y);
+		}
+		0% { 
+			.Translate(0; 0);
+		}
+	}
+
+	@-moz-keyframes @name {
+		0% { 
+			.Translate(0; 0);
+		}
+		50% { 
+			.Translate(@x; @y);
+		}
+		0% { 
+			.Translate(0; 0);
+		}
+	}
+
+	@-o-keyframes @name {
+		0% { 
+			.Translate(0; 0);
+		}
+		50% { 
+			.Translate(@x; @y);
+		}
+		0% { 
+			.Translate(0; 0);
+		}
+	}
+
+	@keyframes @name {
+		0% { 
+			.Translate(0; 0);
+		}
+		50% { 
+			.Translate(@x; @y);
+		}
+		0% { 
+			.Translate(0; 0);
+		}
+	}
+}
+
+// Animace pro prijezd elementu na danou pozici
+.TranslateToPositionOpacity(@name, @from_x, @from_y, @to_x, @to_y, @from_opacity, @to_opacity) {
+	@-webkit-keyframes @name {
+		0% { 
+			.Translate(@from_x; @from_y);
+			.Opacity(@from_opacity);
+		}
+		100% { 
+			.Translate(@to_x; @to_y);
+			.Opacity(@to_opacity);
+		}		
+	}
+
+	@-moz-keyframes @name {
+		0% { 
+			.Translate(@from_x; @from_y);
+			.Opacity(@from_opacity);
+		}
+		100% { 
+			.Translate(@to_x; @to_y);
+			.Opacity(@to_opacity);
+		}		
+	}
+
+	@-o-keyframes @name {
+		0% { 
+			.Translate(@from_x; @from_y);
+			.Opacity(@from_opacity);
+		}
+		100% { 
+			.Translate(@to_x; @to_y);
+			.Opacity(@to_opacity);
+		}		
+	}
+
+	@keyframes @name {
+		0% { 
+			.Translate(@from_x; @from_y);
+			.Opacity(@from_opacity);
+		}
+		100% { 
+			.Translate(@to_x; @to_y);
+			.Opacity(@to_opacity);
+		}		
+	}
+}
+
+// Animace pro prijezd elementu v hero baru
+.AnimateHeroBar(@name) {
+	@-webkit-keyframes @name {
+		0% { 
+			.TransformBase(~'translate(-100vw, 0px) rotate(27.75deg)');
+			.Opacity(0);
+		}
+		100% { 
+			.TransformBase(~'translate(0px, 0px) rotate(27.75deg)');
+			.Opacity(1);
+		}		
+	}
+
+	@-moz-keyframes @name {
+		0% { 
+			.TransformBase(~'translate(-100vw, 0px) rotate(27.75deg)');
+			.Opacity(0);
+		}
+		100% { 
+			.TransformBase(~'translate(0px, 0px) rotate(27.75deg)');
+			.Opacity(1);
+		}		
+	}
+
+	@-o-keyframes @name {
+		0% { 
+			.TransformBase(~'translate(-100vw, 0px) rotate(27.75deg)');
+			.Opacity(0);
+		}
+		100% { 
+			.TransformBase(~'translate(0px, 0px) rotate(27.75deg)');
+			.Opacity(1);
+		}		
+	}
+
+	@keyframes @name {
+		0% { 
+			.TransformBase(~'translate(-100vw, 0px) rotate(27.75deg)');
+			.Opacity(0);
+		}
+		100% { 
+			.TransformBase(~'translate(0px, 0px) rotate(27.75deg)');
+			.Opacity(1);
+		}		
+	}
+}

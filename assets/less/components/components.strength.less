@@ -1,0 +1,207 @@
+/*
+Strength component
+*/
+/* 
+    Created on : 10.11.2017, 14:19:32
+    Author     : Lukáš
+*/
+
+.c-strength {
+	position: relative;
+	
+	&__big-text {
+		position: absolute;
+		z-index: -1;
+		padding: 0;
+		margin: 0;
+		top: 150px;
+		left: 0px;
+		width: 100%;
+		display: none;
+		text-align: center;
+		font-weight: @fwBlack;
+		color: @colorGrayLight;
+		text-transform: uppercase;
+		@fontSizeBase-px: 300;
+		@fontSizeActual-px: 100;
+		@lineheightBase-px: 377;		
+		.SetFont;	
+		
+		@media @mediaMobileL {	
+			display: block;
+			top: 180px;
+		}
+
+		@media @mediaTabletM {	
+			top: 130px;
+			@fontSizeActual-px: 180;
+			.SetFont;	
+		}
+
+		@media @mediaTabletXl {	
+			top: 170px;
+			@fontSizeActual-px: 250;	
+			.SetFont;	
+		}
+		
+		@media @mediaDesktopM {	
+			top: 150px;
+			@fontSizeBase-px: 300;
+			@fontSizeActual-px: 300;
+			@lineheightBase-px: 377;		
+			.SetFont;	
+		}
+	}	
+
+	&__subtitle {
+		margin-top: 10px !important;
+	}
+
+	&__content {
+		.ZeroFont;
+
+		@media @mediaTabletM {	
+			padding-top: 20px;
+		}
+	}
+
+	&__item {
+		padding-top: 50px;
+		display: inline-block;
+		box-sizing: border-box;
+		width: 100%;	
+		text-align: center;
+
+		@media @mediaMobileL {	
+			padding-top: 80px;
+			width: calc(~'100%/2');
+
+			&:nth-of-type(2n+1) {
+				text-align: left;
+			}
+
+			&:nth-of-type(2n+2) {
+				text-align: right;
+			}			
+		}
+		
+		@media @mediaTabletM {	
+			padding-top: 60px;
+			width: calc(~'100%/3');
+			
+			&:nth-of-type(2n+1) {
+				text-align: left;
+			}
+
+			&:nth-of-type(2n+2) {
+				text-align: left;
+			}		
+
+			&:nth-of-type(3n+1) {
+				text-align: left;
+			}
+
+			&:nth-of-type(3n+2) {
+				text-align: center;
+			}
+
+			&:nth-of-type(3n+3) {
+				text-align: right;
+			}	
+		}
+
+		@media @mediaTabletXl {	
+			padding-top: 80px;	
+		}
+	}
+
+	&__item-content {
+		display: inline-block;
+		box-sizing: border-box;
+	}
+
+	&__number-box {
+		.Flexbox;
+		.FlexDirection(row);
+		.FlexJustify(center);
+		.AlignItems(center);
+	}
+
+	&__number {		
+		display: inline-block;
+		padding: 0;
+		margin: 0;	
+		text-align: center;
+		font-weight: @fwBold;
+		color: @colorRed;
+		font-family: @secondFont;
+		.TextShadow(@tsMediumBlack);
+		@fontSizeBase-px: 80;
+		@fontSizeActual-px: 80;
+		@lineheightBase-px: 109;			
+		.SetFont;		
+		
+		@media @mediaTabletM {	
+			@fontSizeBase-px: 100;
+			@fontSizeActual-px: 100;	
+			@lineheightBase-px: 136;	
+			.SetFont;	
+		}
+
+		@media @mediaTabletXl {	
+			@fontSizeBase-px: 120;
+			@fontSizeActual-px: 120;	
+			@lineheightBase-px: 163;	
+			.SetFont;	
+		}
+	}
+
+	&__number-description {
+		display: inline-block;		
+		padding: 0 0 0 20px;
+		margin: 0;	
+		text-align: left;
+		font-weight: @fwBold;
+		color: @colorBlack;
+		font-family: @secondFont;
+		@fontSizeBase-px: 20;
+		@fontSizeActual-px: 20;
+		@lineheightBase-px: 27;			
+		.SetFont;	
+		
+		@media @mediaTabletM {	
+		
+		}
+
+		@media @mediaTabletXl {	
+			@fontSizeBase-px: 24;
+			@fontSizeActual-px: 24;
+			@lineheightBase-px: 33;			
+			.SetFont;	
+		}
+	}
+
+	&__name {
+		padding: 0;
+		margin: 0;	
+		text-align: center;
+		font-weight: @fwLight;
+		color: @colorBlack;
+		@fontSizeBase-px: 30;
+		@fontSizeActual-px: 30;
+		@lineheightBase-px: 38;			
+		.SetFont;	
+
+		@media @mediaMobileL {	
+
+		}	
+		
+		@media @mediaTabletM {	
+		
+		}
+
+		@media @mediaTabletXl {	
+		
+		}
+	}
+}

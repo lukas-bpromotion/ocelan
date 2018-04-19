@@ -1,0 +1,30 @@
+/*
+Komponenta loga v zahlavi version 3
+*/
+/* 
+    Created on : 16.5.2017, 10:27:08
+    Author     : Lukáš
+*/
+
+.c-header-logo-v3 {
+	display: none;
+	@media @mediaTabletXl {
+		display: inline-block;
+	}
+
+	svg {
+		vertical-align: middle;
+		.Size(49px, 50px);
+		.colorable {
+			fill: @colorBlack;
+			stroke: @colorBlack;
+		}
+	}
+
+	&--mobile {
+		display: inline-block;
+		@media @mediaTabletXl {
+			display: none;
+		}
+	}
+}

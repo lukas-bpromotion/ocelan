@@ -1,0 +1,18 @@
+/*
+Zakladni styl pro odkazy
+*/
+/* 
+    Created on : 15.5.2017, 14:35:49
+    Author     : Lukáš
+*/
+
+a {
+	color: @colorLink;
+	text-decoration: none;
+	.Transition(~'background @{timeMedium} @{easingPrimary}, color @{timeMedium} @{easingPrimary}');
+
+	&:hover {
+		color: @colorHover;
+		text-decoration: none;
+	}
+}

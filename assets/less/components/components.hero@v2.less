@@ -1,0 +1,78 @@
+/*
+Komponenta hero oblasti version 2
+*/
+/* 
+    Created on : 17.5.2017, 15:58:33
+    Author     : Lukáš
+*/
+
+.c-hero-v2 {
+	position: relative;
+	padding: 4rem 0;
+
+	@media @mediaMobileL {
+		padding: 7rem 0;
+	}
+
+	@media @mediaTabletM {
+		padding: 14.5rem 0;
+	}
+
+	&__image-box {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+
+		&:after {
+			content: ' ';
+			display: block;
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			background-color: @colorBlack50; 
+		}
+	}
+
+	&__claim {
+		position: relative;
+		font-size: 3rem;
+		line-height: 1.3125;
+		color: @colorWhite;
+		font-weight: @fwBold;
+		text-align: center;
+		display: block;
+		padding: 0;
+		margin: 0 auto;
+
+		@media @mediaMobileL {
+			font-size: 3.5rem;
+		}
+
+		@media @mediaTabletM {
+			font-size: 4.35rem;
+		}
+	}
+
+	&__subtitle {
+		position: relative;
+		font-size: 1rem;
+		line-height: 1.3;
+		color: @colorWhite;
+		text-align: center;
+		display: block;
+		padding: 1rem 0 0 0;
+		margin: 0 auto;
+
+		@media @mediaMobileL {
+			font-size: 1.25rem;
+		}
+
+		@media @mediaTabletM {
+			font-size: 1.25rem;
+		}
+	}	
+}

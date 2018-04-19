@@ -1,0 +1,106 @@
+/*
+Objekt odsazeni stranky - vrchni a spodni
+*/
+/* 
+    Created on : 17.5.2017, 15:56:04
+    Author     : Lukáš
+*/
+
+.o-page-indent {
+  padding-top: 70px;
+  padding-bottom: 70px;
+
+  @media @mediaTabletS {
+    padding-top: 90px;
+    padding-bottom: 90px;
+  }
+
+  @media @mediaTabletXl {
+    padding-top: 150px;
+    padding-bottom: 150px;
+  }
+
+  &--no-top {
+    padding-top: 0px;
+  }
+
+  &--no-bottom {
+    padding-bottom: 0px;
+  }
+
+  &--action {
+    padding-top: 100px;
+    padding-bottom: 0px;
+
+    @media @mediaMobileL {	
+      padding-top: 100px;
+      padding-bottom: 0px;
+    }
+
+    @media @mediaTabletXl {	
+      padding-top: 100px;
+      padding-bottom: 0px;
+    }
+
+  }
+
+  &--gallery {
+    padding-top: 0px;
+    padding-bottom: 50px;
+
+    @media @mediaMobileL {	
+      padding-top: 0px;
+      padding-bottom: 90px;
+    }
+
+    @media @mediaTabletXl {	
+      padding-top: 20px;
+      padding-bottom: 150px;
+    }
+  }
+
+  &--clients {
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+    @media @mediaMobileL {	
+      padding-top: 100px;
+      padding-bottom: 100px;
+    }
+
+    @media @mediaTabletXl {	
+      padding-top: 132px;
+      padding-bottom: 178px;
+    }
+  }
+
+  &--pride {
+    padding-top: 100px;
+    padding-bottom: 100px;
+
+    @media @mediaMobileL {	
+      padding-top: 100px;
+      padding-bottom: 100px;
+    }
+
+    @media @mediaTabletXl {	
+      padding-top: 132px;
+      padding-bottom: 150px;
+    }
+  }
+
+  &--no-hero {
+    padding-top: 100px;
+    padding-bottom: 100px;
+
+    @media @mediaTabletM {
+      padding-top: 100px;
+      padding-bottom: 150px;
+    }
+  }
+
+  &--no-hero-small {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+}

@@ -1,0 +1,135 @@
+/*
+Subnavigation components
+*/
+/* 
+    Created on : 15.11.2017, 13:05:27
+    Author     : Lukáš
+*/
+
+.c-subnav {
+	position: fixed;
+	top: 60px;
+	left: 0px;		
+	.Size(100%, 60px);
+	.BoxShadow(@bsMediumBlack35O);	
+	z-index: 100;	
+	overflow: hidden;
+	.Transition(~'top @{timeMedium} @{easingPrimary}');
+
+	@media @mediaTabletM {		
+		z-index: 1;
+		top: auto;
+		left: auto;
+		.Size(auto, auto);
+		position: relative;
+		overflow: visible;
+		.BoxShadow(none);	
+	}
+
+	&.top-position {
+		top: 0px;
+
+		@media @mediaTabletM {		
+			top: auto;
+		}
+	}
+
+	&__inner {
+		position: absolute;
+		top: 0px;
+		left: 0px;	
+		background-color: @colorGrayLight;
+		margin-top: 0;	
+		.Size(100%, 200px);
+		display: block;	
+		white-space: nowrap;
+		overflow-x: auto;
+		-webkit-overflow-scrolling: touch;
+		-ms-overflow-style: -ms-autohiding-scrollbar;
+		.BoxShadow(@bsMediumBlack35O);
+
+		@media @mediaTabletM {
+			white-space: normal;
+			overflow-x: visible;
+			.Flexbox;
+			.FlexDirection(row);
+			.FlexJustify(space-between);
+			.AlignItems(center);	
+			z-index: 1;
+			margin-top: 50px;
+			.Size(100%, 62px);
+			position: relative;
+		}
+	}
+
+	&__link {
+		display: inline-block;
+		position: relative;
+		overflow: hidden;
+		font-weight: @fwBold;
+		color: @colorBlack;
+		font-family: @secondFont;
+		//padding: 21px 25px;	
+		padding: 0 25px;
+		height: 60px;
+		@fontSizeBase-px: 14;
+		@fontSizeActual-px: 14;
+		@lineheightBase-px: 19;		
+		.SetFont;	
+		will-change: color;
+		.FlexboxInline;
+		.FlexDirection(row);
+		.FlexJustify(center);
+		.AlignItems(center);	
+		.Transition(~'color @{timeMedium} @{easingPrimary}');
+
+		&:before {
+			content: ' ';
+			display: block;
+			position: absolute;
+			left: 0px;
+			bottom: 0px;
+			width: 100%;
+			height: 100%;
+			background-color: @colorRed;
+			z-index: -1;
+			will-change: transform;
+			.Transition(~'transform @{timeMedium} @{easingPrimary}');
+			.Translate(0px; 100%);
+		}
+
+		&:hover {
+			color: @colorBlack;
+
+			&:before {
+				.Translate(0px; calc(~'100% - 3px'));
+			}
+		}
+
+		&.active {
+			color: @colorWhite;
+
+			&:before {
+				.Translate(0px; 0px);
+			}
+
+			&:hover {
+				color: @colorWhite;			
+
+				&:before {
+					.Translate(0px; 0px);
+				}
+			}
+		}		
+
+		@media @mediaTabletM {
+			padding: 0 25px;
+			height: 62px;
+			//padding: 20px 25px;
+			@fontSizeBase-px: 16;
+			@fontSizeActual-px: 16;
+			@lineheightBase-px: 22;		
+			.SetFont;	
+		}
+	}
+}

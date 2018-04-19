@@ -1,0 +1,95 @@
+/*
+Clients component
+*/
+/* 
+    Created on : 10.11.2017, 14:19:32
+    Author     : Lukáš
+*/
+
+.c-clients {
+	position: relative;	
+	text-align: center;
+	background-color: @colorGrayLight;
+
+	&__content {
+		.ZeroFont;
+		.Size(280px, auto);
+		padding-top: 30px;
+		text-align: left;
+		margin: 0 auto;
+
+		@media @mediaMobileL {	
+			padding-top: 51px;
+			.Size(368px, auto);
+		}
+		
+		@media @mediaTabletM {	
+			.Size(auto, auto);
+		}
+		
+		@media @mediaTabletXl {	
+			padding-top: 26px;
+		}
+	}
+
+	&__item {
+		margin-top: 20px;		
+		padding: 24px;
+		background-color: @colorWhite;
+		box-sizing: border-box;
+		vertical-align: top;
+		overflow: hidden;
+		.Size(130px, 130px);
+		.FlexboxInline;
+		.FlexDirection(row);
+		.FlexJustify(center);
+		.AlignItems(center);
+		.BoxShadow(@bsMediumBlack35O);
+
+		&:not(:nth-of-type(2n+1)) {
+			margin-left: 20px;
+		}		
+
+		@media @mediaMobileL {	
+			margin-top: 48px;		
+			padding: 30px;
+			.Size(160px, 160px);
+
+			&:not(:nth-of-type(2n+1)) {
+				margin-left: 48px;
+			}			
+		}		
+		
+		@media @mediaTabletM {	
+			margin-top: 48px;		
+			padding: 30px;
+			.Size(160px, 160px);
+
+			&:not(:nth-of-type(2n+1)) {
+				margin-left: 0px;
+			}		
+
+			&:not(:nth-of-type(4n+1)) {
+				margin-left: 48px;
+			}		
+		}
+		
+		@media @mediaTabletXl {	
+			margin-top: 70px;	
+			
+			&:not(:nth-of-type(4n+1)) {
+				margin-left: 0px;
+			}
+
+			&:not(:nth-of-type(5n+1)) {
+				margin-left: 80px;
+			}		
+		}
+
+		img {
+			//max-height: 100%;
+			max-width: 100%;
+			width: 100%;
+		}
+	}	
+}

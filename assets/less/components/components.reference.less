@@ -1,0 +1,234 @@
+/*
+Work component
+*/
+/* 
+    Created on : 10.11.2017, 14:19:32
+    Author     : Lukáš
+*/
+
+.c-reference {
+	position: relative;
+
+	&__content {
+		.ZeroFont;
+		padding-top: 65px;
+		width: 349px;
+		max-width: 100%;
+		margin: 0 auto;
+		text-align: center;
+
+		@media @mediaMobileL {
+			
+		}	
+
+		@media @mediaTabletM {
+			text-align: left;
+			width: 746px;
+			margin: 0 auto;
+		}	
+
+		@media @mediaTabletXl {
+			padding-top: 65px;
+			width: auto;
+			margin: 0;
+		}	
+	}
+
+	&__item-pack {
+		margin: 20px 0 0 0;		
+		display: inline-block;		
+		max-width: 349px;		
+		.Size(100%, 402px);		
+
+		&:hover {
+			.c-reference__item {
+				.BoxShadow(@bsModerateBlack35O);
+			}
+
+			.c-reference__photo-box-inner {
+				.Scale(1.1);				
+			}
+		}
+
+		@media @mediaMobileL {
+			margin: 35px 0 0 0;	
+			.Size(349px, 458px);
+		}	
+
+		@media @mediaTabletM {
+			margin: 35px 12px 0 12px;	
+			/*&:not(:nth-of-type(2n+1)) {
+				margin-left: 35px;
+			}	*/	
+		}	
+
+		/*@media @mediaTabletXl {
+
+			&:not(:nth-of-type(2n+1)) {
+				margin-left: 0;
+			}		
+
+			&:not(:nth-of-type(3n+1)) {
+				margin-left: 35px;
+			}		
+		}	*/
+	}
+
+	&__item-outer {
+		display: block;	
+		margin: 0;
+		padding: 0;
+		.Size(100%, 100%);
+	}
+
+	&__item {
+		margin: 0;
+		padding: 0;
+		display: block;
+		background-color: @colorWhite;		
+		will-change: box-shadow;
+		.Size(100%, 100%);
+		.BoxShadow(@bsMediumBlack35O);
+		.Transition(~'box-shadow @{timeMedium} @{easingPrimary}');	
+	}	
+
+	&__photo-title-box {
+		position: relative;
+		box-sizing: border-box;
+		padding: 0 30px;
+		z-index: 1;
+		.Size(100%, 186px);
+
+		@media @mediaMobileL {
+			.Size(100%, 233px);
+		}	
+	}
+
+	&__photo-box {
+		position: absolute;
+		overflow: hidden;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+
+		&:after {
+			content: ' ';
+			display: block;
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			background: -moz-linear-gradient(top, rgba(0,0,0,0) 50%, rgba(0,0,0,0.6) 100%);
+			background: -webkit-linear-gradient(top, rgba(0,0,0,0) 50%,rgba(0,0,0,0.6) 100%);
+			background: linear-gradient(to bottom, rgba(0,0,0,0) 50%,rgba(0,0,0,0.6) 100%);
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#cc000000',GradientType=0 );
+		}
+	}
+
+	&__photo-box-inner {
+		width: 100%;
+		height: 100%;
+		padding: 0;
+		margin: 0;
+		will-change: box-shadow;		
+		.ZeroFont;		
+		.Transition(~'transform @{timeLong} @{easingSecondary}');	
+	}
+
+	&__photo-box-image {
+		width: 100%;
+		height: 100%;
+	}
+
+	&__item-title {
+		position: relative;
+		margin: 0;
+		padding: 122px 0 0 0;
+		font-weight: @fwBold;
+		color: @colorWhite;
+		font-family: @secondFont;
+		text-align: left;
+		@fontSizeBase-px: 18;
+		@fontSizeActual-px: 18;
+		@lineheightBase-px: 24;			
+		.SetFont;	
+
+		@media @mediaMobileL {
+			padding: 170px 0 0 0;
+		}	
+	}
+
+	&__parameter-box {
+		position: relative;
+		box-sizing: border-box;		
+		overflow: hidden;
+		padding: 30px 20px;
+		z-index: 0;
+		.Size(100%, 216px);
+
+		@media @mediaMobileL {
+			.Size(100%, 225px);
+			padding: 40px 30px 30px 30px;
+		}	
+	}
+
+	&__parameter {
+		margin: 0;
+		padding: 0;
+		font-weight: @fwRegular;
+		color: @colorBlack;
+		font-family: @thirdFont;
+		text-align: left;
+		@fontSizeBase-px: 16;
+		@fontSizeActual-px: 16;
+		@lineheightBase-px: 26;			
+		.SetFont;	
+	}
+
+	&__project-box {
+		padding: 15px 0 0 0;
+		text-align: left;
+		.ZeroFont;
+	}
+
+	&__project {
+		position: relative;
+		display: inline-block;
+		overflow: hidden;
+		margin: 5px 15px 0 0;
+		padding: 0;
+		font-weight: @fwRegular;
+		color: @colorGrayDarker;
+		font-family: @thirdFont;
+		text-align: left;
+		@fontSizeBase-px: 12;
+		@fontSizeActual-px: 12;
+		@lineheightBase-px: 26;			
+		.SetFont;	
+
+		&:before {
+			content: ' ';
+			display: block;
+			position: absolute;
+			left: 0px;
+			bottom: 6px;
+			width: 100%;
+			height: 1px;
+			background-color: @colorGrayDarker;
+			will-change: transform;
+			.Transition(~'transform @{timeMedium} @{easingPrimary}');
+			.Translate(0px; 0px);
+		}
+
+		&:hover {
+			color: @colorGrayDarker;
+
+			&:before {
+				.Translate(-105%; 0px);
+			}
+		}
+	}
+
+}

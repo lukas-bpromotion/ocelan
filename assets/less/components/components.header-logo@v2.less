@@ -1,0 +1,48 @@
+/*
+Komponenta loga v zahlavi version 2
+*/
+/* 
+    Created on : 16.5.2017, 10:27:08
+    Author     : Lukáš
+*/
+
+.c-header-logo-v2 {
+	.Flexbox;
+	.FlexDirection(row);
+	.FlexJustify(center);
+	.AlignItems(center);
+
+	svg {
+		vertical-align: middle;		
+		.Size(100px, 30px);
+
+		@media @mediaTabletXl {
+			padding-right: 20px;
+			.Size(156px, 46px);
+		}		
+
+		.colorable {
+			fill: @colorWhite;
+			stroke: @colorWhite;
+		}
+	}
+
+	.scrolled & {
+		display: none;
+	}
+
+	&--scrolled {
+		display: none;
+		svg {
+			.Size(100px, 30px);
+
+			@media @mediaTabletXl {
+				.Size(156px, 56px);
+			}		
+		}
+
+		.scrolled & {
+			.Flexbox;
+		}
+	}
+}

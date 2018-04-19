@@ -1,0 +1,100 @@
+/*
+	Setting variables LESS for colors
+*/
+/* 
+    Created on : 15.5.2017, 13:10:24
+    Author     : Lukáš
+*/
+// Barvy
+@colorWhite:        #ffffff; // bila barva
+@colorBlack:        #000101; // cerna barva
+@colorBlue:         #4C95EE; // modra barva
+@colorBlueGray:     #3F5A7A; // modroseda barva
+@colorBlueDark:     #252f3d; // modra tmava barva
+@colorBlueLight:    #5AE1ED; // modra svetla barva
+@colorGreen:        #14E06E; // zelena barva
+@colorGreenLight:   #5EE417; // zelena barva svetla
+@colorRed:          #EB301A; // cervena barva
+@colorYellow:       #F9CD00; // zluta barva
+@colorOrange:       #F49517; // oranzova barva
+@colorGray:         #838997; // seda barva
+@colorGrayLight:    #EFEFEF; // svetle seda barva
+@colorGrayLighter:  #F4F4F4; // svetle seda barva 2
+@colorGrayLighter2: #AEAEAE; // svetle seda barva 3
+@colorGrayDarker:   #696B6B; // tmave seda barva
+@colorGrayDarker2:  #565858; // tmave seda barva 2
+@colorGrayDarker3:  #616161; // tmave seda barva 3
+@colorBrown:        #9E7C33; // hneda barva
+@colorBrownDark:    #39321D; // hneda barva tmava
+@colorPeach:        #F0936C; // Broskvova barva 
+@colorPink:         #EF2BBB; // ruzova barva 
+@colorPurple:       #7D4DE3; // fialova barva 
+
+// Alt colors
+@colorWhite10A:     shade(@colorWhite, 10%);
+@colorWhite20A:     shade(@colorWhite, 20%);
+@colorWhite70O:     fade(@colorWhite, 70%);
+@colorWhite70W:     tint(@colorWhite, 30%);
+@colorWhite70B:     shade(@colorWhite, 70%);
+@colorWhite80O:     fade(@colorWhite, 80%);
+@colorWhite80W:     tint(@colorWhite, 20%);
+@colorWhite80B:     shade(@colorWhite, 80%);
+
+@colorBlack10:      fade(@colorBlack, 10%);
+@colorBlack6A:      tint(@colorBlack, 94%);
+@colorBlack6O:      fade(@colorBlack, 6%);
+@colorBlack6W:      tint(@colorBlack, 94%);
+@colorBlack10A:     tint(@colorBlack, 90%);
+@colorBlack10O:     fade(@colorBlack, 10%);
+@colorBlack10W:     tint(@colorBlack, 90%);
+@colorBlack10B:     shade(@colorBlack, 10%);
+@colorBlack20O:     fade(@colorBlack, 20%);
+@colorBlack20W:     tint(@colorBlack, 80%);
+@colorBlack20B:     shade(@colorBlack, 20%);
+@colorBlack20:      fade(@colorBlack, 20%);
+@colorBlack20A:     tint(@colorBlack, 80%);
+
+@colorBlack25O:     fade(@colorBlack, 25%);
+@colorBlack25W:     tint(@colorBlack, 75%);
+@colorBlack25B:     shade(@colorBlack, 25%);
+
+@colorBlack30:      fade(@colorBlack, 30%);
+@colorBlack30O:     fade(@colorBlack, 30%);
+@colorBlack30A:     tint(@colorBlack, 70%);
+@colorBlack35O:     fade(@colorBlack, 35%);
+@colorBlack50:      fade(@colorBlack, 50%);
+@colorBlack50A:     tint(@colorBlack, 50%);
+@colorBlack60:      fade(@colorBlack, 60%);
+@colorBlack60A:     tint(@colorBlack, 40%);
+@colorBlack70:      fade(@colorBlack, 70%);
+@colorBlack70A:     tint(@colorBlack, 30%);
+
+@colorRed80O:       fade(@colorRed, 80%);
+@colorRed80W:       tint(@colorRed, 20%);
+@colorRed80B:       shade(@colorRed, 80%);
+
+@colorBlue10:       fade(@colorBlue, 10%);
+@colorBlue50:       fade(@colorBlue, 50%);
+@colorBlue70:       fade(@colorBlue, 70%);
+
+@colorBlueGray25:   fade(@colorBlueGray, 25%);
+@colorBlueGray5:    fade(@colorBlueGray, 5%);
+@colorBlueDark50:   fade(@colorBlueDark, 50%);
+
+@colorGreen10:      fade(@colorGreen, 10%);
+@colorGreen10A:     shade(@colorGreen, 10%);
+
+@colorBrown10A:     tint(@colorBrown, 10%);
+@colorPeach10A:     shade(@colorPeach, 10%);
+
+@colorFont:          @colorBlack; // fonty
+@colorPrimary:       @colorBlack; // oranžová
+@colorPrimaryHover:  @colorBlack70; // tmavší červená
+@colorSecondary:     @colorBlue; // šedá
+@colorDark:          @colorBlueDark; // ještě tmavší modrá
+@colorBorder:        @colorGrayLight; // světle šedá
+@colorConfirm:       @colorGreen; // zelená
+@colorConfirmHover:  @colorGreen10A; // tmavší zelená
+@colorLink:          lighten(@colorPrimary, 10%);  // obecný link
+@colorHover:         lighten(@colorPrimary, 30%); // obecný hover na link
+@colorBright:        @colorGrayLight; // velmi světlá barva

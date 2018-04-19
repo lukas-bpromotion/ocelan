@@ -1,0 +1,90 @@
+/*
+Komponenta menu v zahlavi version 1
+*/
+/* 
+    Created on : 15.5.2017, 15:46:15
+    Author     : Lukáš
+*/
+
+.c-header-navigation-v1 {
+	position: fixed;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: calc(~'100% - 80px');
+	top: 80px;
+	left: 0;
+	z-index: 0;
+	display: block;
+	overflow: auto;
+	background-color: @colorWhite;
+	.Translate(0px; calc(~'-100% - 80px'));
+	.Transition(~'transform @{timeMedium} @{easingPrimary}');
+
+	@media @mediaTabletXl {
+		position: absolute;
+		height: 100%;
+		top: 0;
+		overflow: visible;
+		background-color: transparent;
+		z-index: 0;
+		.Flexbox;
+		.FlexDirection(row);
+		.FlexJustify(center);
+		.AlignItems(center);
+		.Translate(0px; 0px);
+	}
+	
+	&.is-open {
+		.Translate(0px; 0px);
+	}
+
+	&__content {		
+		display: block;
+
+		@media @mediaTabletXl {
+			display: inline-block;
+		}
+	}
+
+	&__minor-content {
+		display: block;
+
+		@media @mediaTabletXl {
+			height: 100%;
+			position: absolute;
+			right: 0;
+			top: 0;
+		}
+	}
+
+	&__item {
+		padding: 0;
+		margin: 0;
+		display: block;
+
+		@media @mediaTabletXl {
+			display: inline-block;
+
+			&:not(:first-child) {
+				margin: 0 0 0 10px;
+			}
+		}		
+	}
+
+	&__link {
+		padding: 14px 20px;
+		margin: 0;
+		font-size: 1rem;
+		line-height: 1.3125;
+		display: block;
+		
+		@media @mediaTabletXl {
+			display: inline-block;
+		}
+
+		&.is-active {
+			text-decoration: underline;
+		}
+	}
+}

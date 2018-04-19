@@ -1,0 +1,30 @@
+/*
+Objekt textarea
+*/
+/* 
+    Created on : 6.6.2017, 11:38:53
+    Author     : Lukáš
+*/
+
+.o-textarea {
+	height: 150px;
+	box-sizing: border-box;
+	position: relative;
+	display: inline-block;	
+	padding: 0.75rem 1.25rem;
+	font-size: 1rem;
+	color: @colorBlack;
+	background: @colorWhite;
+	line-height: 1.5625;
+	outline: none;
+	resize: none;
+	overflow: auto;
+	border: 1px solid @colorGray;
+	.BorderRadius(@brMedium);
+	.BoxShadow(@bsInsetBlack50);
+	.Transition(~'background @{timeMedium} @{easingPrimary}, box-shadow @{timeMedium} @{easingPrimary}');
+	
+	&:focus {
+		
+	}
+}

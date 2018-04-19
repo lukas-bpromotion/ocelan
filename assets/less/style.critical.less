@@ -1,0 +1,130 @@
+/*
+	Styl pro kriticke CSS
+*/
+/* 
+    Created on : 15.5.2017, 10:53:11
+    Author     : Lukáš
+*/
+
+// Generic, far-reaching, low specificity styles are declared first:
+// Settings: Global variables, config switches.
+@import "settings/settings.global.less";
+@import "settings/settings.colors.less";
+@import "settings/settings.fonts.less";
+@import "settings/settings.easing.less";
+
+// Tools: Default mixins and functions.
+@import "tools/tools.mixins.less";
+@import "tools/tools.prefixes.less";
+@import "tools/tools.animations.less";
+
+// Generic: Ground-zero styles (Normalize.css, resets, box-sizing).
+@import (inline) "generic/generic.normalize.css";
+
+// Elements: Unclassed HTML elements (type selectors).
+@import "elements/elements.page.less";
+@import "elements/elements.headings.less";
+@import "elements/elements.paragraphs.less";
+@import "elements/elements.lists.less";
+@import "elements/elements.tables.less";
+@import "elements/elements.hr.less";
+@import "elements/elements.links.less";
+@import "elements/elements.inputs.less";
+@import "elements/elements.buttons.less";
+
+// Objects: Cosmetic-free design patterns.
+@import "objects/objects.page-width.less";
+@import "objects/objects.page-indent.less";
+//@import "objects/objects.header@v1.less";
+@import "objects/objects.header@v2.less";
+//@import "objects/objects.header@v3.less";
+@import "objects/objects.content@v1.less";
+@import "objects/objects.navigation.less";
+@import "objects/objects.input.less";
+@import "objects/objects.textarea.less";
+@import "objects/objects.button.less";
+@import "objects/objects.progressive-image.less";
+@import "objects/objects.image-center.less";
+@import "objects/objects.image-center@v2.less";
+//@import "objects/objects.footer@v1.less";
+//@import "objects/objects.popupBlock.less";
+
+// Components: Designed components, chunks of UI.
+//@import "components/components.link.less";
+//@import "components/components.input@v1.less";
+//@import "components/components.textarea@v1.less";
+//@import "components/components.header@v1.less";
+@import "components/components.header@v2.less";
+//@import "components/components.header-navigation@v1.less";
+@import "components/components.header-navigation@v2.less";
+//@import "components/components.header-navigation@v3.less";
+//@import "components/components.header-logo@v1.less";
+@import "components/components.header-logo@v2.less";
+//@import "components/components.header-logo@v3.less";
+//@import "components/components.language-menu@v1.less";
+//@import "components/components.burger@v1.less";
+@import "components/components.burger@v2.less";
+//@import "components/components.hero@v1.less";
+//@import "components/components.hero@v2.less";
+//@import "components/components.text@v1.less";
+//@import "components/components.article@v1.less";
+//@import "components/components.form@v1.less";
+//@import "components/components.form@v2.less";
+//@import "components/components.form@v3.less";
+//@import "components/components.contact-box@v1.less";
+//@import "components/components.contact-box@v2.less";
+//@import "components/components.contact-list@v1.less";
+//@import "components/components.card@v1.less";
+//@import "components/components.card@v2.less";
+//@import "components/components.card@v3.less";
+//@import "components/components.card-list@v1.less";
+//@import "components/components.brand@v1.less";
+//@import "components/components.brand-list@v1.less";
+//@import "components/components.brand-list@v2.less";
+@import "components/components.footer@v1.less";
+//@import "components/components.footer@v2.less";
+//@import "components/components.ico-link.less";
+//@import "components/components.download.less";
+//@import "components/components.gallery.less";
+//@import "components/components.highlights.less";
+//@import "components/components.location.less";
+//@import "components/components.contacts@v2.less";
+//@import "components/components.strength.less";
+//@import "components/components.title.less";
+//@import "components/components.offer.less";
+//@import "components/components.values.less";
+//@import "components/components.quality.less";
+//@import "components/components.clients.less";
+//@import "components/components.pride.less";
+//@import "components/components.footer-navigation.less";
+//@import "components/components.footer@v3.less";
+//@import "components/components.references-banner.less";
+//@import "components/components.subnavigation.less";
+//@import "components/components.reference.less";
+//@import "components/components.contacts.less";
+//@import "components/components.contact-detail.less";
+//@import "components/components.case-study.less";
+//@import "components/components.gray-box.less";
+//@import "components/components.cs.gallery.less";
+//@import "components/components.animation-bar@v2.less";
+@import "components/components.action-bar.less";
+@import "components/components.static_map.less";
+@import "components/components.about_center.less";
+@import "components/components.free_parking.less";
+@import "components/components.open_hours.less";
+@import "components/components.multi-carousel.less";
+@import "components/components.store-map.less";
+@import "components/components.map-type-list.less";
+
+// Plugins: Plugins.
+//@import (inline) "plugins/plugins.aos.css";
+@import (inline) "plugins/plugins.owl.carousel.css";
+@import (inline) "plugins/plugins.owl.theme.default.css";
+//@import (inline) "plugins/plugins.magnific.popup.css";
+//@import (inline) "plugins/plugins.chocolat.css";
+//@import (inline) "plugins/plugins.lightbox.css";
+@import (inline) "plugins/plugins.animate.css";
+
+// Helpers: Helpers and overrides.
+@import "helpers/helpers.text.less";
+@import "helpers/helpers.padding.less";

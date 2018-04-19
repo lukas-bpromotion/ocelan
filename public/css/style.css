@@ -1,0 +1,723 @@
+/*
+	Styl pro vychozi CSS
+*/
+/* 
+    Created on : 15.5.2017, 10:53:11
+    Author     : Lukáš
+*/
+/*
+	Setting variables LESS for global
+*/
+/* 
+    Created on : 15.5.2017, 13:10:48
+    Author     : Lukáš
+*/
+/*
+	Setting variables LESS for colors
+*/
+/* 
+    Created on : 15.5.2017, 13:10:24
+    Author     : Lukáš
+*/
+/*
+	Setting variables LESS for fonts
+*/
+/* 
+    Created on : 15.5.2017, 13:11:02
+    Author     : Lukáš
+*/
+/*
+	Proměnné s Bezierovou křivkou pro animace
+*/
+/* 
+    Created on : 25.1.2017, 8:26:02
+    Author     : Lukáš
+*/
+/* -----------------------------------------------------------------------------------------
+	Funkce použitelné jako mixiny, většinou usnadňující zápis dlouhých skupin vlastností.
+-------------------------------------------------------------------------------------------- */
+/* Object fit [fill | contain | cover | none | scale-down] */
+/* Object position */
+/* Filter blur in pixels */
+/*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */
+
+/* Document
+   ========================================================================== */
+
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in
+ *    IE on Windows Phone and in iOS.
+ */
+
+html {
+  line-height: 1.15; /* 1 */
+  -ms-text-size-adjust: 100%; /* 2 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+}
+
+/* Sections
+   ========================================================================== */
+
+/**
+ * Remove the margin in all browsers (opinionated).
+ */
+
+body {
+  margin: 0;
+}
+
+/**
+ * Add the correct display in IE 9-.
+ */
+
+article,
+aside,
+footer,
+header,
+nav,
+section {
+  display: block;
+}
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/* Grouping content
+   ========================================================================== */
+
+/**
+ * Add the correct display in IE 9-.
+ * 1. Add the correct display in IE.
+ */
+
+figcaption,
+figure,
+main { /* 1 */
+  display: block;
+}
+
+/**
+ * Add the correct margin in IE 8.
+ */
+
+figure {
+  margin: 1em 40px;
+}
+
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+
+hr {
+  box-sizing: content-box; /* 1 */
+  height: 0; /* 1 */
+  overflow: visible; /* 2 */
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+
+pre {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/* Text-level semantics
+   ========================================================================== */
+
+/**
+ * 1. Remove the gray background on active links in IE 10.
+ * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.
+ */
+
+a {
+  background-color: transparent; /* 1 */
+  -webkit-text-decoration-skip: objects; /* 2 */
+}
+
+/**
+ * 1. Remove the bottom border in Chrome 57- and Firefox 39-.
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+
+abbr[title] {
+  border-bottom: none; /* 1 */
+  text-decoration: underline; /* 2 */
+  text-decoration: underline dotted; /* 2 */
+}
+
+/**
+ * Prevent the duplicate application of `bolder` by the next rule in Safari 6.
+ */
+
+b,
+strong {
+  font-weight: inherit;
+}
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+
+code,
+kbd,
+samp {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/**
+ * Add the correct font style in Android 4.3-.
+ */
+
+dfn {
+  font-style: italic;
+}
+
+/**
+ * Add the correct background and color in IE 9-.
+ */
+
+mark {
+  background-color: #ff0;
+  color: #000;
+}
+
+/**
+ * Add the correct font size in all browsers.
+ */
+
+small {
+  font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/* Embedded content
+   ========================================================================== */
+
+/**
+ * Add the correct display in IE 9-.
+ */
+
+audio,
+video {
+  display: inline-block;
+}
+
+/**
+ * Add the correct display in iOS 4-7.
+ */
+
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+/**
+ * Remove the border on images inside links in IE 10-.
+ */
+
+img {
+  border-style: none;
+}
+
+/**
+ * Hide the overflow in IE.
+ */
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* Forms
+   ========================================================================== */
+
+/**
+ * 1. Change the font styles in all browsers (opinionated).
+ * 2. Remove the margin in Firefox and Safari.
+ */
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: sans-serif; /* 1 */
+  font-size: 100%; /* 1 */
+  line-height: 1.15; /* 1 */
+  margin: 0; /* 2 */
+}
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+
+button,
+input { /* 1 */
+  overflow: visible;
+}
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+
+button,
+select { /* 1 */
+  text-transform: none;
+}
+
+/**
+ * 1. Prevent a WebKit bug where (2) destroys native `audio` and `video`
+ *    controls in Android 4.
+ * 2. Correct the inability to style clickable types in iOS and Safari.
+ */
+
+button,
+html [type="button"], /* 1 */
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button; /* 2 */
+}
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/**
+ * Correct the padding in Firefox.
+ */
+
+fieldset {
+  padding: 0.35em 0.75em 0.625em;
+}
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+
+legend {
+  box-sizing: border-box; /* 1 */
+  color: inherit; /* 2 */
+  display: table; /* 1 */
+  max-width: 100%; /* 1 */
+  padding: 0; /* 3 */
+  white-space: normal; /* 1 */
+}
+
+/**
+ * 1. Add the correct display in IE 9-.
+ * 2. Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+
+progress {
+  display: inline-block; /* 1 */
+  vertical-align: baseline; /* 2 */
+}
+
+/**
+ * Remove the default vertical scrollbar in IE.
+ */
+
+textarea {
+  overflow: auto;
+}
+
+/**
+ * 1. Add the correct box sizing in IE 10-.
+ * 2. Remove the padding in IE 10-.
+ */
+
+[type="checkbox"],
+[type="radio"] {
+  box-sizing: border-box; /* 1 */
+  padding: 0; /* 2 */
+}
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+
+[type="search"] {
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
+}
+
+/**
+ * Remove the inner padding and cancel buttons in Chrome and Safari on macOS.
+ */
+
+[type="search"]::-webkit-search-cancel-button,
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
+}
+
+/* Interactive
+   ========================================================================== */
+
+/*
+ * Add the correct display in IE 9-.
+ * 1. Add the correct display in Edge, IE, and Firefox.
+ */
+
+details, /* 1 */
+menu {
+  display: block;
+}
+
+/*
+ * Add the correct display in all browsers.
+ */
+
+summary {
+  display: list-item;
+}
+
+/* Scripting
+   ========================================================================== */
+
+/**
+ * Add the correct display in IE 9-.
+ */
+
+canvas {
+  display: inline-block;
+}
+
+/**
+ * Add the correct display in IE.
+ */
+
+template {
+  display: none;
+}
+
+/* Hidden
+   ========================================================================== */
+
+/**
+ * Add the correct display in IE 10-.
+ */
+
+[hidden] {
+  display: none;
+}
+
+/*
+	Hlavni elementy HTML
+*/
+/* 
+    Created on : 15.5.2017, 13:57:33
+    Author     : Lukáš
+*/
+html,
+button,
+input,
+select,
+textarea {
+  font-family: "Ubuntu", sans-serif;
+}
+html {
+  height: 100%;
+  color: #000101;
+  font-size: 14px;
+  text-rendering: optimizeLegibility;
+  text-rendering: geometricPrecision;
+  font-smooth: always;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+}
+body {
+  height: 100%;
+}
+body.modal {
+  overflow: hidden;
+}
+/*
+  Nadpisy HTML
+*/
+/* 
+    Created on : 15.5.2017, 13:56:36
+    Author     : Lukáš
+*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-family: "Noto Serif", serif;
+  font-weight: bold;
+  margin: 0 0 30px 0;
+  padding: 0;
+  color: #838997;
+  font-size: 2.14285714rem;
+  line-height: 1.36666667;
+}
+@media screen and (min-width: 48em) {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .h1,
+  .h2,
+  .h3,
+  .h4,
+  .h5,
+  .h6 {
+    margin: 0 0 50px 0;
+    font-size: 2.85714286rem;
+    line-height: 1.375;
+  }
+}
+h1--big-indent,
+h2--big-indent,
+h3--big-indent,
+h4--big-indent,
+h5--big-indent,
+h6--big-indent,
+.h1--big-indent,
+.h2--big-indent,
+.h3--big-indent,
+.h4--big-indent,
+.h5--big-indent,
+.h6--big-indent {
+  margin: 0 0 50px 0;
+}
+@media screen and (min-width: 48em) {
+  h1--big-indent,
+  h2--big-indent,
+  h3--big-indent,
+  h4--big-indent,
+  h5--big-indent,
+  h6--big-indent,
+  .h1--big-indent,
+  .h2--big-indent,
+  .h3--big-indent,
+  .h4--big-indent,
+  .h5--big-indent,
+  .h6--big-indent {
+    margin: 0 0 100px 0;
+  }
+}
+h1--no-indent,
+h2--no-indent,
+h3--no-indent,
+h4--no-indent,
+h5--no-indent,
+h6--no-indent,
+.h1--no-indent,
+.h2--no-indent,
+.h3--no-indent,
+.h4--no-indent,
+.h5--no-indent,
+.h6--no-indent {
+  margin: 0;
+}
+@media screen and (min-width: 48em) {
+  h1--no-indent,
+  h2--no-indent,
+  h3--no-indent,
+  h4--no-indent,
+  h5--no-indent,
+  h6--no-indent,
+  .h1--no-indent,
+  .h2--no-indent,
+  .h3--no-indent,
+  .h4--no-indent,
+  .h5--no-indent,
+  .h6--no-indent {
+    margin: 0;
+  }
+}
+/*h2, h3, h4, h5, h6,
+.h2, .h3, .h4, .h5, .h6 {
+  color: @colorGray;
+}
+
+h1, .h1 { font-size: 1.75rem; font-weight: @fwMedium;  }
+h2, .h2 { font-size: 1.2rem;  }
+h3, .h3 { font-size: 1.15rem; }
+h4, .h4 { font-size: 1rem;    }
+h5, .h5 { font-size: 1rem;    }
+h6, .h6 { font-size: 1rem;    }
+
+@media @mediaMobileL {
+  h1, .h1 { font-size: 2rem;    }
+  h2, .h2 { font-size: 1.25rem;  }
+}
+
+@media @mediaTabletL {
+  h1, .h1 { font-size: 2.5rem; }
+  h2, .h2 { font-size: 1.5rem;  }
+}*/
+/*
+Zakladni styly pro odstavce - p, blockquote
+*/
+/* 
+    Created on : 15.5.2017, 14:28:31
+    Author     : Lukáš
+*/
+p,
+blockquote {
+  margin: 0;
+  padding: 0;
+  line-height: 1.5625;
+}
+/*
+Zakladni styly pro seznamy
+*/
+/* 
+    Created on : 15.5.2017, 14:30:45
+    Author     : Lukáš
+*/
+ul,
+ol {
+  margin: 0px 0px 1em 1.25em;
+  padding: 0px;
+}
+ul ul,
+ol ol,
+ul ol,
+ol ul {
+  margin-bottom: 0px;
+}
+li {
+  line-height: 1.35;
+  padding: 0.3em 0.2em;
+}
+/*
+Zakladni styl pro tabulky
+*/
+/* 
+    Created on : 15.5.2017, 14:32:57
+    Author     : Lukáš
+*/
+table {
+  margin-bottom: 1em;
+}
+/*
+Zakladni styl pro delici caru - hr
+*/
+/* 
+    Created on : 15.5.2017, 14:34:35
+    Author     : Lukáš
+*/
+hr {
+  margin: 1em 0px;
+  border: 1px solid #EFEFEF;
+  border-top: none;
+}
+/*
+Zakladni styl pro odkazy
+*/
+/* 
+    Created on : 15.5.2017, 14:35:49
+    Author     : Lukáš
+*/
+a {
+  color: #003434;
+  text-decoration: none;
+  -webkit-transition: background 0.317s cubic-bezier(0.645, 0.045, 0.355, 1.000), color 0.317s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+  -ms-transition: background 0.317s cubic-bezier(0.645, 0.045, 0.355, 1.000), color 0.317s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+  -o-transition: background 0.317s cubic-bezier(0.645, 0.045, 0.355, 1.000), color 0.317s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+  transition: background 0.317s cubic-bezier(0.645, 0.045, 0.355, 1.000), color 0.317s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+}
+a:hover {
+  color: #009a9a;
+  text-decoration: none;
+}
+/*# sourceMappingURL=style.css.map */

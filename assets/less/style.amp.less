@@ -1,0 +1,30 @@
+/*
+	Styl pro AMP plugin
+*/
+/* 
+    Created on : 15.5.2017, 10:53:11
+    Author     : Lukáš
+*/
+
+// Generic, far-reaching, low specificity styles are declared first:
+// Settings: Global variables, config switches.
+@import "settings/settings.global.less";
+@import "settings/settings.colors.less";
+@import "settings/settings.fonts.less";
+@import "settings/settings.easing.less";
+
+// Tools: Default mixins and functions.
+@import "tools/tools.mixins.less";
+@import "tools/tools.prefixes.less";
+
+// Generic: Ground-zero styles (Normalize.css, resets, box-sizing).
+@import (inline) "generic/generic.normalize.css";
+
+// Elements: Unclassed HTML elements (type selectors).
+@import "elements/elements.page.less";
+@import "elements/elements.headings.less";
+@import "elements/elements.paragraphs.less";
+@import "elements/elements.lists.less";
+@import "elements/elements.tables.less";
+@import "elements/elements.hr.less";
+@import "elements/elements.links.less";

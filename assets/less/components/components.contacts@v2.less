@@ -1,0 +1,134 @@
+/*
+Strength component
+*/
+/* 
+    Created on : 10.11.2017, 14:19:32
+    Author     : Lukáš
+*/
+
+.c-contacts-v2 {
+	position: relative;
+	background-color: @colorBlack;
+	padding-top: 40px;
+
+	@media @mediaMobileL {
+		padding-top: 175px;
+	}
+
+	&__map {
+		.Size(100%, 480px);
+		background-color: @colorWhite;
+		position: relative;
+		margin-top: -480px;
+		z-index: 1;
+		.BoxShadow(@bsBigBlack);
+
+		@media @mediaMobileL {
+			.Size(100%, 675px);
+			margin-top: -675px;
+		}
+	}
+
+	h2 {
+		color: @colorYellow;
+		text-transform: uppercase;
+		font-weight: @fwRegular;
+		margin: 0 0 40px 0;
+		@fontSizeBase-px: 30;
+		@fontSizeActual-px: 30;
+		@lineheightBase-px: 35;		
+		.SetFont;	
+
+		@media @mediaTabletM {
+			margin: 0 0 75px 0;
+		}
+	}
+
+	&__block {		
+		.FlexDirection(row);
+		.FlexJustify(space-between);
+		.AlignItems(center);
+
+		@media @mediaTabletM {
+			.Flexbox;
+		}
+	}
+
+	&__text-box {
+		max-width: 600px;	
+
+		ul {
+			margin: 0;
+			padding: 0;
+			list-style-type: none;
+			text-align: left;
+
+			li {
+				color: @colorWhite;
+				font-weight: @fwRegular;
+				position: relative;				
+				overflow: hidden;
+				padding: 0 0 0 22px;
+				margin: 36px 0 0 0;
+				vertical-align: top;
+				width: auto;
+				.Flexbox;
+				.FlexDirection(row);
+				.FlexJustify(flex-start);
+				.AlignItems(center);	
+				@fontSizeBase-px: 14;
+				@fontSizeActual-px: 14;
+				@lineheightBase-px: 24;		
+				.SetFont;	
+
+				&:before {
+					content: ' ';
+					display: block;
+					position: absolute;
+					.Size(4px, calc(~'100% - 10px'));	
+					background-color: @colorYellow;
+					top: 5px;
+					left: 0px;
+				}			
+
+
+				@media @mediaTabletM {
+					width: 240px;
+					margin: 0;
+					.FlexboxInline;
+
+					&:nth-of-type(2n) {
+						margin-left: 70px;
+					}
+				}
+
+				b {
+					font-weight: @fwBold;
+				}
+
+				a {
+					color: @colorWhite;
+
+					&:hover {
+						color: @colorYellow;
+					}
+				}
+			}
+		}
+	}
+
+	&__image-box {
+		position: relative;
+		z-index: 0;
+		margin: 40px 0 0 0;
+		.Size(auto, auto);	
+
+		@media @mediaTabletM {
+			margin: 0;
+		}		
+
+		img {
+			.Size(auto, auto);
+		}		
+	}	
+}

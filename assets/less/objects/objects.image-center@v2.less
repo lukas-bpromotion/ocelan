@@ -1,0 +1,44 @@
+/*
+Objekt vycentrovaneho obrazku (pracuje s frameworkem Modernizer)
+*/
+/* 
+    Created on : 17.5.2017, 16:54:49
+    Author     : Lukáš
+*/
+
+.o-image-center-v2 {	
+	.Size(100%, 100%);
+	
+	img {
+		.Size(100%, 100%);
+		.ObjectFit(cover);
+		.ObjectPosition(center center);
+	}
+
+	html.no-objectfit & {
+		.Flexbox;
+		.FlexDirection(row);
+		.FlexJustify(center);
+		.AlignItems(center);
+		.Size(2000%, 100%);
+		.Translate(-50%, 0);
+		left: 50%;
+		position: relative;
+
+		&.vertical {
+			.Size(100%, 2000%);
+			.Translate(0, -50%);
+			left: 0;
+			top: 50%;
+			img {
+				width: 100%;
+				height: auto;
+			}
+		}
+
+		img {
+			height: 100%;
+			width: auto;
+		}
+	}
+}

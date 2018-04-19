@@ -1,0 +1,206 @@
+/*
+Komponenta menu v zahlavi version 2
+*/
+/* 
+    Created on : 15.5.2017, 15:46:15
+    Author     : Lukáš
+*/
+
+.c-header-navigation-v2 {
+  position: fixed;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  .Flexbox;
+  .FlexDirection(column);
+  .FlexJustify(center);
+  .AlignItems(center);
+  overflow: auto;
+  background-color: @colorWhite;
+  .Translate(100%; 0px);	
+  .Transition(~'transform @{timeMedium} @{easingPrimary}');
+
+  @media @mediaTabletL {
+    position: relative;
+    width: auto;
+    height: auto;
+    top: auto;
+    left: auto;    
+    overflow: visible;
+    background-color: transparent;
+    z-index: 0;		
+    .FlexDirection(row);
+    .Translate(0px; 0px);
+  }
+
+  &.is-open {
+
+    .visible & {
+      .Translate(0px; 0px);
+    }		
+  }
+
+  &__item {
+    padding: 15px 0;
+    margin: 0;
+    display: block;
+
+    @media @mediaTabletL {
+      display: inline-block;
+      padding: 0;
+
+      &:not(:first-child) {
+        margin: 0 0 0 50px;
+      }
+    }	
+
+    &--language {			
+      padding: 25px 0 15px 0;
+      position: relative;
+
+      &:before {
+        content: ' ';
+        position: absolute;
+        top: 25px;
+        left: -6px;
+        height: 1px;
+        width: 30px;
+        background-color: @colorWhite;
+      }
+
+      @media @mediaTabletL {
+        padding: 0 0 0 29px;
+
+        &:before {
+          content: ' ';
+          position: absolute;
+          top: 5px;
+          left: 0;
+          height: 30px;
+          width: 1px;
+          background-color: @colorWhite;
+        }
+      }
+
+      .scrolled & {
+
+        &:before {
+          background-color: @colorGrayDarker2;
+        }
+      }
+    }
+  }
+
+  &__link {		
+    padding: 6px 0px;
+    margin: 0;		
+    display: block;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+    font-weight: @fwRegular;
+    color: @colorBlack;
+    @fontSizeBase-px: 14;
+    @fontSizeActual-px: 14;
+    @lineheightBase-px: 16;		
+    .SetFont;	
+
+    &:before {
+      content: ' ';
+      display: block;
+      position: absolute;
+      left: 0px;
+      bottom: 0px;
+      width: 100%;
+      height: 2px;
+      background-color: @colorRed;
+      will-change: transform;
+      .Transition(~'transform @{timeMedium} @{easingSecondary}');
+      .Translate(-105%; 0px);
+    }
+
+    @media @mediaTabletL {
+      display: inline-block;
+      color: @colorBlack;
+
+      &:before {
+        background-color: @colorRed;
+      }
+    }
+
+    &--language {
+      padding: 20px 0px 10px 0;
+      text-transform: uppercase;
+      font-weight: @fwRegular;
+
+      @media @mediaTabletL {
+        padding: 10px 0px;
+      }
+    }
+
+    &:hover {
+      color: @colorBlack;
+      &:before {
+        .Translate(0px; 0px);
+      }
+    }
+
+    &.is-active {
+      color: @colorRed;
+
+      &:before {
+        background-color: @colorRed;
+      }
+    }
+
+    .scrolled & {
+      color: @colorBlack;
+
+      &:before {
+        background-color: @colorBlack;
+      }
+
+      &:hover {
+        &:before {
+          .Translate(0px; 0px);
+        }
+      }
+
+      &.is-active {
+        color: @colorRed;
+
+        &:before {
+          background-color: @colorRed;
+        }
+      }
+    }
+  }
+
+  &__ico-link {
+    vertical-align: middle;
+    
+    &:not(:first-child) {
+      margin-left: 20px;
+    }
+    
+    svg {
+      &.colorable, .colorable {
+        fill: @colorRed;
+        .Transition(~'fill @{timeMedium} @{easingSecondary}');
+      }
+    }
+
+    &:hover {
+      svg {
+        &.colorable, .colorable {
+          fill: shade(@colorRed, 20%);
+        }
+      }
+    }
+  }
+}
